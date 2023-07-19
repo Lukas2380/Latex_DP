@@ -1,10 +1,18 @@
-\documentclass[12pt, oneside, numbers=noenddot]{scrbook}  
+\documentclass[12pt, oneside, numbers=noenddot]{scrbook}
 \input{./includes/htl_definintions.tex}	
 
 \usepackage[onehalfspacing]{setspace}
 \usepackage{csquotes}
-\usepackage[backend=biber, style=authoryear]{biblatex}
-\usepackage{cite}
+\usepackage{graphicx}
+
+\usepackage{glossaries}
+\makenoidxglossaries
+\input{includes/glossaryEntries.tex}
+%\glsaddallunused % if glossar is acting up
+\input{includes/commands.tex}
+
+\usepackage[defernumbers=true]{biblatex}
+\addbibresource{media/literatur.bib}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -28,54 +36,50 @@
 
 \begin{document}
 
-
 \pagenumbering{arabic}	
 		
-\input{./chapters/00_deckblatt.tex}
-\input{./chapters/00_ee.tex}
-\input{./chapters/00_dokumentation.tex}
+\input{./chapters/00/00_deckblatt.tex}
+\input{./chapters/00/00_ee.tex}
+\input{./chapters/00/00_dokumentation.tex}
 
 	
 \tableofcontents
 \pagenumbering{arabic}	
 
-\input{./chapters/01_pflichtenheft.tex}
-\input{./chapters/01_abstract.tex}
-\input{./chapters/01_introduction.tex}
+\input{./chapters/01/01_pflichtenheft.tex}
+\input{./chapters/01/01_abstract.tex}
+\input{./chapters/01/01_introduction.tex}
 
-\input{./chapters/02_umfeldanalyse_schachinger.tex}
-\input{./chapters/02_umfeldanalyse_usta.tex}
+\input{./chapters/02/02_umfeldanalyse_schachinger.tex}
+\input{./chapters/02/02_umfeldanalyse_usta.tex}
 
-\input{./chapters/03_UserInterface.tex}
+\input{./chapters/03/03_UserInterface.tex}
 
-\newpage\null\thispagestyle{empty}\newpage % this where thesis splits off
-
-\addcontentsline{toc}{chapter}{Spielkonzept}
+\addcontentsline{toc}{chapter}{Spielkonzept} 
 \addcontentsline{toc}{chapter}{Prototyp-Entwicklung}
-\addcontentsline{toc}{chapter}{User Interface (UI)}
+
 \addcontentsline{toc}{chapter}{Tests und Qualitätssicherung?}
 \addcontentsline{toc}{chapter}{Vermarktung und Veröffentlichung}
 \addcontentsline{toc}{chapter}{Zusammenfassung und Ausblick}
 
-
 \appendix
 
-\input{./chapters/99_acknowledgements.tex}
+\newpage
+\printnoidxglossaries
 
-\addcontentsline{toc}{chapter}{Listings}
-\lstlistoflistings
+%\input{./chapters/99/99_acknowledgements.tex}
+
+%\addcontentsline{toc}{chapter}{Listings}
+%\lstlistoflistings
 
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 
-
 \addcontentsline{toc}{chapter}{Bibliography}
-
-
 \printbibliography
 
 %\input{./chapters/99_authors.tex}
-\input{./chapters/99_Anhang.tex}
-\input{./chapters/99_Betreuungsprotokolle.tex}
+\input{./chapters/99/99_Anhang.tex}
+\input{./chapters/99/99_Betreuungsprotokolle.tex}
 
-\end{document}  
+\end{document}

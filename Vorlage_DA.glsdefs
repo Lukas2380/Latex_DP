@@ -1,0 +1,28 @@
+\glsdefs@newdocentry{multiplayer}%
+{%
+name={Multiplayer},%
+sort={Multiplayer},%
+type={main},%
+first={Multiplayer},%
+firstplural={Multiplayers},%
+text={Multiplayer},%
+plural={Multiplayers},%
+description={This is the description of the Multiplayer.},%
+descriptionplural={This is the description of the Multiplayer.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
