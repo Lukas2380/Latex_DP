@@ -1,3 +1,6 @@
+\setauthorname{Lukas Schachinger}
+
+
 \chapter{User Interface (UI) und Interaktion}
 
 \begin{quote}
@@ -48,11 +51,9 @@ Das Hauptmenü des Prototyps besteht aus mehreren Komponenten. Die Hauptkomponen
 Der Hintergrund des Hauptmenüs ist ein PNG von der \gls{skybox} des Spiels. 
 
 \subsubsection{Die Buttons}
-Die unten abgebildeten Abbildungen zeigen das Hauptmenü (links) und das Optionsmenü (rechts) des Prototyps. \\
-In dem Hauptmenü gibt es drei verschiedene Buttons: Play, Options and Quit.\\
-Play startet den Spielablauf, Options öffnet das Optionsmenü und Quit schließt das Spiel.\\\\
-
-In dem Optionsmenü befindet sich die Lautstärkenregelung und... und der Back Button um zurück in das Hauptmenü zu kommen.
+Die unten abgebildeten Abbildungen zeigen das Hauptmenü (links) und das Optionsmenü (rechts) des Prototyps. In dem Hauptmenü gibt es drei verschiedene Buttons: Play, Options and Quit. Play startet den Spielablauf, Options öffnet das Optionsmenü und Quit schließt das Spiel.\\\\
+In dem Optionsmenü befindet sich die Lautstärkenregelung und... \\
+Der "Back" Button um zurück in das Hauptmenü zu kommen befindet sich an letzter Stelle des Optionsmenüs.
     
 
 
@@ -73,6 +74,60 @@ In dem Optionsmenü befindet sich die Lautstärkenregelung und... und der Back B
     \end{minipage}
 \end{figure}
 
+\section{Code behind des Menüs}
+
+Der \gls{code-behind} des Menüs ist sehr simpel gehalten und auch einfach zu verstehen.
+
+% C#
+\begin{lstlisting}[language=CSharp,caption={Main Menu Klasse.},label=code:mainmenu]
+public class MainMenu : MonoBehaviour
+{
+    public void PlayGame()
+    {
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
+}
+\end{lstlisting}
+Der SceneManager ist ein einfacher Weg mittels einer Art von \gls{statemachine} eine Menüführung aufzubauen. In der nächsten Abbildung wird die Build-Reihenfolge der Scenes dargestellt.
+
+\begin{center}
+    \begin{figure}[h]
+        \centering
+        \includegraphics*[width=1\textwidth]{chapters/03/images/SceneManager.png}
+        \caption{Der SceneManager in den Build Settings.}
+        \label{htl04}
+    \end{figure}
+\end{center}
+
+\noindent
+Mittels der Code Zeile: 
+% C#
+\begin{lstlisting}[language=CSharp]
+    SceneManager.LoadScene(activeScene.buildIndex + 1);
+\end{lstlisting}
+kann von der Menü Scene, die an der Stelle 0 ist zu der Projekt Scene, die an der Stelle 1 ist, gewechselt werden.
+
+\pagebreak
+
+\subsection{Die Funktion dem Button zuordnen}
+
+In der nächsten Abbildung ist ein Ausschnitt der Properties des Play Buttons zu sehen. Bei der \verb+On Click ()+ Property wurde das \verb+MainMenu+ Script hinzugefügt. Nachdem das Script dort ausgewählt wurde, ist es möglich Methoden von diesem als Aktion für den Button auszuwählen. 
+
+\begin{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{chapters/03/images/PlayButton.png}
+            \caption{Abbildung der Properties des Play Buttons.}
+            \label{htl05}
+    \end{figure}
+\end{center}
 
 
 \section{Game UI und Spielmechanik-Anzeigen}
@@ -83,6 +138,12 @@ In dem Optionsmenü befindet sich die Lautstärkenregelung und... und der Back B
     \caption{Das UI während des Spiels.}
     \label{htl03}
 \end{figure}
+
+\subsection{Links oben (1)}
+\subsection{Rechts oben (1)}
+\subsection{... Mitte (1)}
+
+\pagebreak
 
 \section{Optionen und Einstellungen}
 \section{Pause-Funktion und Benutzerfreundlichkeit}

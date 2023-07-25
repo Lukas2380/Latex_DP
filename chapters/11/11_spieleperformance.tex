@@ -1,0 +1,69 @@
+
+\pagebreak
+\setauthorname{Martin Usta}
+\chapter{Spieleperformance}
+
+
+\subsection{Einführung}
+In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spielentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes Detail braucht auch Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte entfernt aufgrund der Leistung. Meistens werden diese für das Spiel optimiert. Bei der Spieleentwicklung kann man bei zwei Faktoren die Performance optimieren. Ein Faktor wäre hierbei bei die Spiel-Engine. Der andere Faktor wäre beim Modelierungsprogramm.
+
+\subsection{Spielobjekt Optimierung im Grafikprogramm}
+Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performanter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygon genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detaillierter ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. Weil sobald ein Polygon in Render-Distanz ist, wird dieses berechnet. Um die Polygonanzahl niedrig zu halten, werden die Details als **Objekt-Images** gezeichnet.\\\\
+Bei unserem ersten Prototyp hatten wir das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten wir die meisten Objekte bei unseren Prototypen neu bearbeiten Dieser Vorgang wird auch "Mapping" genannt.
+\pagebreak
+\subsection{Objekt Mapping}
+
+Bei einen Objekt-Image handelt es sich um ein Bild, welches über das Objekt gelegt wird. Für dieses Verfahren muss erst das Objekt, für das Bild **unwraped** werden. Dieser Vorgang zerlegt das Objekt in sogenannten Maps.\\\\
+In der nächsten Abbildung wird auf der linken Seite eine unwraped Mapp von einem Stein gezeigt, der in unseren Prototypen implementiert wird. Auf der rechten Seite wird das 3D-Objekt gezeigt.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapters/11/Images/StoneAndUnwrap.png}
+    \caption{Eine Abbildung einer unwrapped map und des Objektes.}
+    \label{htl01}
+\end{figure}
+
+\noindent Jetzt könnte man ein Image unter die unwrapped Mapp legen und damit weiterarbeiten. Auf diesem Image können nun sämtliche Details eingezeichnet werden. Wenn die Details eingezeichnet wurden, wird das Image **gebacken**. Bei dem folgenden Bild sieht man das Objekt-Image eines Steins:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{chapters/11/Images/SteinColor.png}
+    \caption{Eine Abbildung einer Colormap des Objektes.}
+    \label{htl01}
+\end{figure}
+
+\subsection{Normal Maps}
+
+Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Objektes aufzunehmen. Diese werden auch verwendet, um das Objekt eine simulierte Höhe und Tiefe zu geben. Bei dem Folgendem Bild wird eine Normal-Mapp von einem Stein gezeigt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{chapters/11/Images/SteinNormal.png}
+    \caption{Eine Abbildung einer Normalmap des Objektes.}
+    \label{htl01}
+\end{figure}
+
+\noindent Bei der Normal-Maps ist deutlich zu erkennen, dass der blaue Bereich flach ist. Die bunten Striche zeigen hingegen Kratzer, welche der Stein beinhaltet.
+
+\subsection{Maps Kombinieren}
+
+Als letzten Schritt müssen alle Maps kombiniert werden. Diese werden in dem Grafikprogramm übereinandergelegt.\\\\
+Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einem großen Detail Vielfalt. In nächste Abbildung wird das Endresultat des Steins gezeigt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapters/11/Images/SteinCombi.png}
+    \caption{Eine Abbildung des fertigen Objektes.}
+    \label{htl01}
+\end{figure}
+
+Um das Objekt in Unity zu implementieren, werden alle Maps in Unity gebraucht. Es ist auch wichtig, dass Unity ein anderes Koordinatensystem hat als Blender. Somit muss beim Export die richtige Richtung angegeben werden.  Sonst kann es passieren, dass das Objekt in Unity in eine andere Richtung zeigt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapters/11/Images/Koordinaten.png}
+    \caption{Eine Abbildung Unterschiedlicher Programme mit deren Koordinatensystem}
+    \label{htl01}
+\end{figure}
