@@ -1,5 +1,76 @@
 \setauthorname{Lukas Schachinger}
 
+% Das ist nur Beispiel was wir schreiben könnten
+\pagebreak
+\section{Planung und Konzeption des Spiels}
+\subsection{Story und Theme:}
+\begin{enumerate}
+  \item Vorstellung der Spielidee und des Storykonzepts.
+  \item Beschreibung der Hintergrundgeschichte und Charaktere.
+  \item Erklärung des gewählten Spielthemas und seiner Relevanz für die Spielerfahrung.
+\end{enumerate}
+
+\subsection{Leveldesign:}
+\begin{enumerate}
+  \item Einführung in das Leveldesign und seine Bedeutung für das Spielerlebnis.
+  \item Beschreibung der geplanten Level, ihrer Ziele und Herausforderungen.
+  \item Eventuell Skizzen oder Diagramme, die die Levelstruktur verdeutlichen.
+\end{enumerate}
+
+\subsection{UI-Design und User Experience:}
+\begin{enumerate}
+  \item Beschreibung des geplanten User Interfaces und dessen Funktionen (z. B. HUD, Menüs).
+  \item Erklärung der gestalterischen Entscheidungen und UI-Elemente (z. B. Symbole, Farben).
+  \item Diskussion der User Experience und wie sie das Gameplay beeinflusst.
+\end{enumerate}
+
+\subsection{Gameobjekte und deren Platzierung:}
+\begin{enumerate}
+  \item Vorstellung der verschiedenen Gameobjekte im Spiel und ihrer Funktionen.
+  \item Diskussion der Platzierung und Verteilung der Gameobjekte in den Leveln.
+  \item Erklärung, wie die Gameobjekte mit der Spielmechanik interagieren.
+\end{enumerate}
+
+\subsection{Spielanleitung und Steuerung:}
+\begin{enumerate}
+  \item Erstellung einer detaillierten Spielanleitung für die Spieler.
+  \item Beschreibung der Steuerungsmöglichkeiten und Interaktionsmechanismen.
+  \item Eventuell Integration von Tutorials oder Hilfestellungen für neue Spieler.
+\end{enumerate}
+
+\section{Entwicklung des Prototyps}
+\subsection{Technische Anforderungen:}
+\begin{enumerate}
+  \item Liste der technischen Anforderungen an den Prototyp (z. B. Plattform, Performance).
+  \item Beschreibung der Zielplattformen, auf denen der Prototyp laufen soll.
+\end{enumerate}
+
+\subsection{Einrichtung der Entwicklungsumgebung:}
+\begin{enumerate}
+  \item Erklärung der verwendeten Entwicklungsumgebung (z. B. Unity) und der Tools.
+  \item Beschreibung der Konfiguration für die Entwicklung des Prototyps.
+\end{enumerate}
+
+\subsection{Implementierung der Spielmechanik:}
+\begin{enumerate}
+  \item Detailierte Beschreibung der Umsetzung der Kernspielmechaniken.
+  \item Codebeispiele und Algorithmen, die die Funktionalität demonstrieren.
+  \item Erläuterung von Herausforderungen und Lösungsansätzen während der Implementierung.
+\end{enumerate}
+
+\subsection{Erstellung von Leveln und Umgebungen:}
+\begin{enumerate}
+  \item Bericht über den Prozess der Levelerstellung und -gestaltung.
+  \item Vorstellung von Werkzeugen und Techniken für das Leveldesign.
+  \item Beispiele für die Gestaltung von Umgebungen und deren Einfluss auf das Gameplay.
+\end{enumerate}
+
+\subsection{Integration von Effekten und Sounds:}
+\begin{enumerate}
+  \item Beschreibung der eingesetzten visuellen Effekte (z. B. Partikel, Beleuchtung).
+  \item Erklärung, wie Soundeffekte und Hintergrundmusik das Spielerlebnis verbessern.
+  \item Diskussion von Optimierungen für eine bessere Leistung und Immersion.
+\end{enumerate}
 
 \chapter{User Interface (UI) und Interaktion}
 
@@ -11,10 +82,10 @@ Das UI im Spieldesign ist fast der wichtigste Teil der Spielentwicklung, wenn ma
 Ohne eine gute Menu führung und ein gut entworfenes User Interface ist es schwer, dass Spielerinnen und Spieler das Spiel verstehen und spielen können. 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{chapters/03/images/Spielinterface.png}
-    \caption{Ein Beispiel eines Dialogbaumes von einem Computerspiel.}
-    \label{htl01}
+  \centering
+  \includegraphics[width=0.8\textwidth]{chapters/03/images/Spielinterface.png}
+  \caption{Ein Beispiel eines Dialogbaumes von einem Computerspiel.}
+  \label{htl01}
 \end{figure}
 
 Der abgebildete Dialogbaum zeigt die verschiedenen Menüs und Screens die ein Computerspiel haben kann.
@@ -54,7 +125,6 @@ Der Hintergrund des Hauptmenüs ist ein PNG von der \gls{skybox} des Spiels.
 Die unten abgebildeten Abbildungen zeigen das Hauptmenü (links) und das Optionsmenü (rechts) des Prototyps. In dem Hauptmenü gibt es drei verschiedene Buttons: Play, Options and Quit. Play startet den Spielablauf, Options öffnet das Optionsmenü und Quit schließt das Spiel.\\\\
 In dem Optionsmenü befindet sich die Lautstärkenregelung und... \\
 Der "Back" Button um zurück in das Hauptmenü zu kommen befindet sich an letzter Stelle des Optionsmenüs.
-    
 
 
 \begin{figure}[H]
@@ -139,11 +209,32 @@ In der nächsten Abbildung ist ein Ausschnitt der Properties des Play Buttons zu
     \label{htl03}
 \end{figure}
 
-\subsection{Links oben (1)}
-\subsection{Rechts oben (1)}
-\subsection{... Mitte (1)}
+\subsection{Eulenmünzen (1)}
+Sammelobjekte, oder auch Collectibles gennant, gibt es in vielen Computerspielen. Jedoch bieten sie die unterschiedlichsten Funktionen. In PacMan ist das Sammeln von den Punkten teil des Spielziels. Verglichen zu Donkey Kong, wo das Sammeln von den Collectibles nicht verpflichtend ist. Aber es ist Teil von 101\% Vervollständigung des Spiels.
+%https://donkeykong.fandom.com/wiki/Donkey_Kong_64#Gameplay
 
-\pagebreak
+Als Sammelobject gibt es in dem Prototypen so gennante \glqq Eulenmünzen\grqq. Diese dienen ähnlich wie bei Donkey Kong als nicht verpflichtende Nebenaufgabe. Die Münzen schweben überall verstreut über die Welt des Prototypen. 
+
+\subsection{Lebensanzeige (2)}
+
+Eine Lebensanzeige in einem Computerspiel ist ein dezenter Hinweis darauf, dass der Spielcharakter sterblich ist. Schaden kann von Gegnern oder Fallen genommen werden.
+
+In dem Prototypen wird die Lebensanzeige als roter Balken neben einem Herz dargestellt. Dieses Symbol befindet sich in der rechten oberen Ecke des Bildschirms. Lebensenergie wird abgezogen wenn die Spielfigur von einem Gegner getroffen wird oder in das Void\footnote[1]{Das Void ist die Dunkelheit unter der Spielwelt.} fällt.
+
+\subsection{Steuerung (3)}
+
+Eine Darstellung der Steuerung auf dem User Interface ist ein einfacher Weg, das Spielkonzept dem Spieler näherzubringen. Ein gutes Beispiel dafür ist die Startwelt von Super Mario Odyssey. Dieses Spiel war auch eine große Inspiration für den Prototypen. 
 
 \section{Optionen und Einstellungen}
+
+Tbd...
+
 \section{Pause-Funktion und Benutzerfreundlichkeit}
+Die Pause-Funktion ist ein wichtiger Teil eines Spiels. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{chapters/03/images/GamePaused.png}
+  \caption{Das Game Paused UI des Prototypen.}
+  \label{luk01}
+\end{figure}

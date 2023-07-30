@@ -17,14 +17,35 @@ Bei diesen Gebieten der Spielentwicklung ist es wichtig, dass sie einstimmig sin
 \subsection{Leveldesign - Umgebungsdesign}
 Das Leveldesign besteht aus zwei voneinander Abhängigen Gebieten. Das betrifft das Level und die Umgebung die es betrifft. Dabei geht es beim Leveldesign um: Spielfiguren, Plattformen, Levelaufbau, Levelphysik etc. 
 Das Umgebungsdesign befasst sich mit der Umgebung des Spiels wie zum Beispiel: Himmel(Skybox), Berge, Flüssigkeiten, Sonneneinstrahlung, etc. 
-Beide Aspekte entscheiden wie, realistisch das Spiel ausschaut. Es ist nicht zum Empfehlen den Grafikstyle zwischen den Properties und der Umgebung zu mischen. 
+Beide Aspekte entscheiden wie, realistisch das Spiel ausschaut. Es ist nicht zum Empfehlen den Grafikstyle zwischen den Properties und der Umgebung zu mischen.
+
+Ein Level besteht immer aus statischen Objekte und dynamischen Objekte.
+
+\section{Statische Objekte}
+Statische Objekte sind Spielelemente die keine Interaktionsmöglichkeit mit dem Spieler eingeht. Sie dienen meisten als Prop\footnote[1]{ist ein Spielobjekt} welches nicht bewegliches Level objekt zählt. \\\\
+Ein statisches Objekt kann der Boden des Levels sein auf den die Spielfigur geht. Oder Häuser die im Spiel implementiert sind diese sind meistens als ortgebundenes Objekt in der Welt, welches nur den Sinn hat, als Logation für das nexte Spielevent zu dienen. Auch Objekte die nur den sinn haben die Welt lebhafter zu gestalten wie Bäume, Fässer, Steine usw. dienen nur also Dekoelement. Diese dienen nur als optische Bereichrung für das Level. 
+
+\section{Dynamische Objekte}
+Dynamische Objekte haben im Gegensatz zum statischen Objekt eine Programmierung im Hintergrund. Diese Objekte haben einen Aktiven einfluss auf das Spielgeschehen. Zudem können sie mit dem Spielbaren Charkter interagieren. Hier muss aber wieder differenziert werden zwischen Umgebungsobjekt und NPC(non playable character).\\\\
+Ein Umgebungsobjekt wäre zum Beispiel eine Platform die sich bewegt. Diese hat einen aktiven Einfluss auf den Spieler. Meistens werden dynamische Umgebungsobjekte als Herausforderung den Spieler endgegend gestellt um sie zu überwinden. Ein Beispiel wäre eine Falle, die den Spieler blockiert solange dieser einen verstekten Schalter findet. Die Anwendung für Umgebungsobjekte sind grenzelos.\\\\
+Ein NPC(non playable character) zählt zwar auch als dynamische Objekt aber hat einen anderen Nutzen als das Umgebungsobjekt. Der NPC kann viele Rollen haben. Zudem kann dieser den Spielbaren Charakter helfen oder auch ihn hindern sein Ziel zu erreichen. Eine Rolle wäre die des Questgebers dieser kann den Spieler ein Aufgabe geben die er erfüllen muss um weiter im voranzuschreiten. Eine andere Rolle wäre das der Spieler von einem NPC blockiert werden kann oder sogar den Spieler angreift um ihn zu besiegen.
+
+\subsection{Kamera und Sichten}
+In einer Spielewelt gibt es immer eine Kamera, die das Spielgeschehen den User auch anzeigt. Diese kann sowohl statisch auf eine Szene im Spiel plaziert sein, als auch auf die Spielfigur selbst. Zum Beispiel wäre es bei einem Schachspiel essentiell das sich die Kamera nicht bewegt und die Linze auf das Spielbrett zeigt. Indesem fall währe die Sicht die Adlereperspektive auch Dropdown genannt. Hier zeigt die Kamera von Oben nach Unten.Dann gibt es noch unterschiede zwischen den sichten wie die Spielfigur gezeigt wird. Da wären folgende:
+
+\begin{itemize}
+    \item \textbf{First Person:}
+    \noindent Die firtsperson Sicht zeigt die Sicht aus der Spielfigur
+    \item \textbf{Third Person:}
+    \noindent Die thirdperson Sicht zeigt sowohl die Spielfigur als auch alles runterum. 
+\end{itemize}
 
 \subsection{Theme Auswahl}
 Das Theme bestimmt welche Atmosphäre das Spiel haben soll. Bei dem Theme ist es wichtig das es mit dem Gameplay abgestimmt ist. Es gibt viele Arten von Themes von Horror bis zum Abenteuer ist alles dabei. Nach der Theme Auswahl kann die Planung für die  Game Assets beginnen. Zudem entscheidet das Theme weitere Spieldesign Aspekte: wie die Musik, die Spielmechaniken und die  Story. Wir haben uns für ein Fantasie Theme entschieden. Das heißt das die Grafik sehr bunt gestaltet ist und einen nicht realistischen Grafikstil. Bei einen Fantasie Theme ist die Auswahl der Gestaltung des Levels sehr umfangreich. 
 
+
 \subsection{Spiel Schwierigkeit}
 
 Bei der Spieleentwicklung ist es wichtig die Schwierigkeit des Spieles zu bestimmen. Schwierigkeit bestimmt den Flow des Spielverlaufs. Die Schwierigkeit sollte je nach Zielgruppe abgestimmt werden. Für die Spieler ist es wichtig, dass das man gefordert wird. Das gibt den User das Gefühl etwas erreicht zu haben. Zudem sollte das Spiel nicht zu schwer sein, damit der Spieler nicht frustriert wird. 
-
 
 %https://www.nuclino.com/articles/level-design#:~:text=What%20is%20level%20design%3F,player%20and%20keep%20them%20engaged.
