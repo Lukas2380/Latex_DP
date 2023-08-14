@@ -1,0 +1,64 @@
+\section{Technische Anforderungen:}
+\begin{enumerate}
+  \item Liste der technischen Anforderungen an den Prototyp (z. B. Plattform, Performance).
+  \item Beschreibung der Zielplattformen, auf denen der Prototyp laufen soll.
+\end{enumerate}
+
+\section{Einrichtung der Entwicklungsumgebung:}
+\begin{enumerate}
+  \item Erklärung der verwendeten Entwicklungsumgebung (z. B. Unity) und der Tools.
+  \item Beschreibung der Konfiguration für die Entwicklung des Prototyps.
+\end{enumerate}
+
+\section{Implementierung der Spielmechanik:}
+\begin{enumerate}
+  \item Detailierte Beschreibung der Umsetzung der Kernspielmechaniken.
+  \item Codebeispiele und Algorithmen, die die Funktionalität demonstrieren.
+  \item Erläuterung von Herausforderungen und Lösungsansätzen während der Implementierung.
+\end{enumerate}
+
+\section{Erstellung von Leveln und Umgebungen:}
+\begin{enumerate}
+  \item Bericht über den Prozess der Levelerstellung und -gestaltung.
+  \item Vorstellung von Werkzeugen und Techniken für das Leveldesign.
+  \item Beispiele für die Gestaltung von Umgebungen und deren Einfluss auf das Gameplay.
+\end{enumerate}
+
+\section{Integration von Effekten und Sounds:}
+\begin{enumerate}
+  \item Beschreibung der eingesetzten visuellen Effekte (z. B. Partikel, Beleuchtung).
+  \item Erklärung, wie Soundeffekte und Hintergrundmusik das Spielerlebnis verbessern.
+  \item Diskussion von Optimierungen für eine bessere Leistung und Immersion.
+\end{enumerate}
+
+
+\section{Historie der Prototypen}
+Unsere Reise bei der Entwicklung des Spiels begann mit einer einfachen Zeichnung des Prototypen V1. Von dort aus haben wir kontinuierlich an verschiedenen Aspekten gearbeitet, um das Spielerlebnis stetig zu verbessern.
+
+\subsection{Prototyp V1}
+\begin{itemize}
+  \item Zeichnung des ersten Prototypen (V1) und Ideensammlung.
+  \item Entwicklung des Spielthemas und Design des Hauptcharakters - eine entzückende Eule.
+  \item Implementierung einer rudimentären Charaktersteuerung in einem leeren Projekt.
+\end{itemize}
+
+\subsection{Prototyp V1 - Erstes Level}
+In dieser Phase haben wir begonnen, das erste Level des ersten Prototypen zu entwerfen und zu gestalten. Lukas konzentrierte sich auf die Programmierung beweglicher Plattformen, während Usta das erste Level in Unity entwarf.
+
+\subsection{Herausforderungen und Fortschritt}
+Während der Entwicklung des ersten Prototypen sind wir auf einige Herausforderungen gestoßen. Ein Problem mit der Polygonanzahl bei einer Brücke wurde identifiziert, was potenziell die Leistung des Spiels beeinträchtigen könnte. Dies führte zur Entscheidung, den zweiten Prototyp (V2) zu erstellen.
+
+\subsection{Prototyp V2}
+\begin{itemize}
+  \item Neuausrichtung des Projekts für bessere Leistung: Erstellung des Prototyps V2.
+  \item Entwurf und Implementierung des Benutzeroberflächen-Designs (UI) - Hauptmenü, Pausemenü und Ingame-UI.
+  \item Usta erstellte Assets wie Bäume, bewegliche Plattformen, Steine, Fässchen und Münzen.
+\end{itemize}
+
+\subsection{Finaler Prototyp}
+In dieser Phase arbeiteten wir hart an der Feinabstimmung und Fertigstellung des ersten Levels im finalen Prototyp. Gleichzeitig begannen wir mit dem Bau des zweiten Levels und überarbeiteten das UI für eine verbesserte Benutzererfahrung.
+
+\section{Ausblick}
+Aktuell sind wir dabei, das zweite Level zu entwickeln und planen weitere Verbesserungen für den finalen Prototypen, um ein herausragendes Spielerlebnis zu bieten.
+
+

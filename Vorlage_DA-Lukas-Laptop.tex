@@ -4,16 +4,7 @@
 \usepackage[onehalfspacing]{setspace}
 \usepackage{csquotes}
 \usepackage{graphicx}
-\usepackage{uarial} % Load uarial package for Arial font
 
-% C#
-\usepackage{listings}
-
-% Fußnotenpackage
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-
-% ende
 \input{includes/commands.tex}
 
 \usepackage{glossaries}
@@ -24,28 +15,27 @@
 \usepackage[defernumbers=true]{biblatex}
 \addbibresource{media/literatur.bib}
 
-% Initialen der Autoren
+\renewcommand{\familydefault}{\sfdefault}
+
+% Initialen der Authoren
 \def\authorInitialsA{LS} % Lukas Schachinger
 \def\authorInitialsB{UM} % Usta Martin
 
 % Die Initialen werden verwendet um anzuzeigen wer welches Kapitel
-% erstellt hat.h
+% erstellt hat.
 
 % Die Befehle \authorA - \authorB werden in den Kapitelüberschriften angefügt
 \def\authorA{\textmd{\textsuperscript{\authorInitialsA}}}
 \def\authorB{\textmd{\textsuperscript{\authorInitialsB}}}
 
+
 % Titel der Arbeit:
 \def\htlArbeitsthema{Unity Game Design und Development}	
 
-%\setlength{\headheight}{23.5071pt}
-\setlength{\headheight}{23.7771pt}
+\setlength{\headheight}{23.5071pt}
 \addtolength{\topmargin}{-6.5071pt}
 
 \begin{document}
-\setauthorname{}
-\pagestyle{customfooter}
-
 
 \pagenumbering{arabic}	
 		
@@ -55,6 +45,7 @@
 
 	
 \tableofcontents
+\pagenumbering{arabic}	
 
 \input{./chapters/01/01_pflichtenheft.tex}
 \input{./chapters/01/01_abstract.tex}
@@ -64,13 +55,6 @@
 \input{./chapters/02/02_umfeldanalyse_usta.tex}
 
 \input{./chapters/03/03_UserInterface.tex}
-\input{./chapters/04/PrototypEntwicklung.tex}
-
-\input{./chapters/11/11_spieleperformance.tex}
-\input{./chapters/12/12_spieldesign.tex}
-\input{./chapters/13/13_blender.tex}
-\input{./chapters/14/14_unity.tex}
-\input{./chapters/15/15_storyandtheme.tex}
 
 \addcontentsline{toc}{chapter}{Spielkonzept} 
 \addcontentsline{toc}{chapter}{Prototyp-Entwicklung}
@@ -79,7 +63,6 @@
 \addcontentsline{toc}{chapter}{Vermarktung und Veröffentlichung}
 \addcontentsline{toc}{chapter}{Zusammenfassung und Ausblick}
 
-\setauthorname{}
 \appendix
 
 \newpage
