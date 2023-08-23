@@ -1,34 +1,42 @@
 \pagebreak
 \setauthorname{Martin Usta}
-\chapter{Spieledesign}
-\section{Spieledesign}
+\chapter{Spieledesign} % todo: maybe fix überschrifteneinheitlichkeit
+\section{Spieledesign} % todo: spieledesign/spieldesign 
 
-Das Spieldesign umfasst mehrere Gebiete der Spielentwicklung. Die Gebiete des Spieldesign sind:
+Das Spieldesign umfasst mehrere Gebiete der Spielentwicklung. Die verschiedenen Gebiete des Spieldesign sind:
 
-\begin{itemize}
+\begin{itemize} % todo: überschriften überarbeiten?
     \item Level Design - Umgebungsdesign 
     \item Theme Auswahl 
     \item Spiel Schwierigkeit 
-    \item Music 
+    \item Musik
 \end{itemize}
 
-Bei diesen Gebieten der Spielentwicklung ist es wichtig, dass sie einstimmig sind und zueinander passen. Falls die Gebiete des Spiels-design nicht zueinander passen, so wird das Spiele-Erlebnis für den Endkonsumenten schlecht. 
+Bei diesen Gebieten der Spielentwicklung ist es wichtig, dass sie das selbe Theme verfolgen und zueinander passen. Falls die Gebiete des \hl{Spiels-design} nicht zueinander passen, so wird das \hl{Spiele-Erlebnis} für den \hl{Endkonsumenten schlecht}. 
 
 \subsection{Leveldesign - Umgebungsdesign}
-Das Leveldesign besteht aus zwei voneinander Abhängigen Gebieten. Das betrifft das Level und die Umgebung die es betrifft. Dabei geht es beim Leveldesign um: Spielfiguren, Plattformen, Levelaufbau, Levelphysik etc. 
+Das Leveldesign besteht aus zwei voneinander abhängigen Gebieten. \hl{Das betrifft das Level und die Umgebung die es betrifft.} Dabei geht es beim Leveldesign um: Spielfiguren, Plattformen, Levelaufbau, Levelphysik etc. 
 Das Umgebungsdesign befasst sich mit der Umgebung des Spiels wie zum Beispiel: Himmel(Skybox), Berge, Flüssigkeiten, Sonneneinstrahlung, etc. 
-Beide Aspekte entscheiden wie, realistisch das Spiel ausschaut. Es ist nicht zum Empfehlen den Grafikstyle zwischen den Properties und der Umgebung zu mischen.
+Beide Aspekte entscheiden wie realistisch das Spiel auf den Spieler wirkt. Es ist nicht zum Empfehlen den Grafikstyle zwischen den Properties und der Umgebung zu mischen.
 
-Ein Level besteht immer aus statischen Objekte und dynamischen Objekte.
+Ein Level besteht immer aus statischen Objekte und dynamischen Objekte. %todo: maybe insert citation?
 
-\subsection{Statische Objekte}
-Statische Objekte sind Spielelemente die keine Interaktionsmöglichkeit mit dem Spieler eingeht. Sie dienen meisten als Prop\footnote[1]{ist ein Spielobjekt} welches nicht bewegliches Level objekt zählt. \\\\
-Ein statisches Objekt kann der Boden des Levels sein auf den die Spielfigur geht. Oder Häuser die im Spiel implementiert sind diese sind meistens als ortgebundenes Objekt in der Welt, welches nur den Sinn hat, als Logation für das nexte Spielevent zu dienen. Auch Objekte die nur den sinn haben die Welt lebhafter zu gestalten wie Bäume, Fässer, Steine usw. dienen nur also Dekoelement. Diese dienen nur als optische Bereichrung für das Level. 
+\pagebreak
+
+\subsection{Statische Objekte} %todo: footnote einheitlich machen
+Statische Objekte sind Spielelemente die keine Interaktionsmöglichkeit für den Spieler bieten. Sie dienen meisten als Prop\footnote[1]{ist ein Spielobjekt} welches als nicht bewegliches Levelobjekt zählt. \\\\
+Ein statisches Objekt könnte zum Beispiel ein Bücherregal in einem Level sein. Dieses bietet dem Spieler keine Interaktionsmöglichkeiten sondern dient nur der Ästhetik des Raumes. \\
+
+\hl{
+    Ein weiteres Beispiel wären Häuser die im Spiel implementiert sind, diese sind meist als ortgebundenes Objekt in der Welt, welches nur den Sinn hat, als Location für das nexte Spielevent zu dienen. Auch Objekte die nur den Sinn haben die Welt lebhafter zu gestalten wie Bäume, Fässer, Steine usw. dienen nur also Dekoelement. Diese dienen nur als optische Bereicherung für das Level. 
+}
 
 \subsection{Dynamische Objekte}
-Dynamische Objekte haben im Gegensatz zum statischen Objekt eine Programmierung im Hintergrund. Diese Objekte haben einen Aktiven einfluss auf das Spielgeschehen. Zudem können sie mit dem Spielbaren Charkter interagieren. Hier muss aber wieder differenziert werden zwischen Umgebungsobjekt und NPC(non playable character).\\\\
-Ein Umgebungsobjekt wäre zum Beispiel eine Platform die sich bewegt. Diese hat einen aktiven Einfluss auf den Spieler. Meistens werden dynamische Umgebungsobjekte als Herausforderung den Spieler endgegend gestellt um sie zu überwinden. Ein Beispiel wäre eine Falle, die den Spieler blockiert solange dieser einen verstekten Schalter findet. Die Anwendung für Umgebungsobjekte sind grenzelos.\\\\
-Ein NPC(non playable character) zählt zwar auch als dynamische Objekt aber hat einen anderen Nutzen als das Umgebungsobjekt. Der NPC kann viele Rollen haben. Zudem kann dieser den Spielbaren Charakter helfen oder auch ihn hindern sein Ziel zu erreichen. Eine Rolle wäre die des Questgebers dieser kann den Spieler ein Aufgabe geben die er erfüllen muss um weiter im voranzuschreiten. Eine andere Rolle wäre das der Spieler von einem NPC blockiert werden kann oder sogar den Spieler angreift um ihn zu besiegen.
+Dynamische Objekte haben im Gegensatz zu statischen Objekten eine \hl{Programmierung || maybe passt 'Funktion' besser} im Hintergrund. Diese Objekte haben einen aktiven Einfluss auf das Spielgeschehen. Zudem können sie mit dem spielbaren Charakter interagieren. Hier muss aber wieder differenziert werden zwischen Umgebungsobjekt und NPC(non playable character).\\\\ % todo: footnote for npc + bibliotek eintrag
+Ein Umgebungsobjekt wäre zum Beispiel eine Platform die sich bewegt. Diese hat einen aktiven Einfluss auf den Spieler. Meistens werden dynamische Umgebungsobjekte als Herausforderung dem Spieler entgegengestellt. Ein Beispiel wäre eine Falle, die den Spieler blockiert bis dieser einen versteckten Schalter findet. \hl{
+    Die Anwendung für Umgebungsobjekte sind grenzenlos. %todo: maybe useless sentence
+}\\\\
+Ein NPC(non playable character) zählt zwar auch als dynamische Objekt aber hat einen anderen Nutzen als das Umgebungsobjekt. \hl{Der NPC kann viele Rollen haben. || Ein NPC muss nicht ein Gegner sein...} Zudem kann dieser den Spielbaren Charakter helfen oder auch ihn hindern sein Ziel zu erreichen. Eine Rolle wäre die eines Questgebers, dieser kann den Spieler ein Aufgabe geben, die dieser erfüllen muss um weiter im Spiel voranzuschreiten. \hl{Eine andere Rolle wäre} das der Spieler von einem NPC blockiert werden kann oder sogar den Spieler angreift um ihn zu besiegen.
 
 \pagebreak
 

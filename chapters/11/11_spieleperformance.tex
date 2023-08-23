@@ -8,13 +8,13 @@
 In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spielentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert. \hl{Bei der Spieleentwicklung kann man bei zwei Faktoren die Performance optimieren. Ein Faktor wäre hierbei bei die Spiel-Engine. Der andere Faktor wäre beim Modelierungsprogramm}. %todo: fix text grammar
 
 \subsection{Spielobjekt Optimierung im Grafikprogramm}
-Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. \hl{Weil sobald ein Polygon in Render-Distanz ist, wird dieses berechnet. Um die Polygonanzahl niedrig zu halten, werden die Details als **Objekt-Images** gezeichnet.} \\\\
+Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. \hl{Weil sobald ein Polygon in Render-Distanz ist, wird dieses berechnet. Um die Polygonanzahl niedrig zu halten, werden die Details als **Objekt-Images** gezeichnet.} \\\\ %todo: change the ****
 Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. \hl{Somit mussten wir die meisten Objekte bei unseren Prototypen neu bearbeiten Dieser Vorgang wird auch 'Mapping' genannt.} %todo: fix the ""
 \pagebreak
 \subsection{Objekt Mapping}
 
 Bei einem Objekt-Image handelt es sich um ein Bild, welches über das Objekt gelegt wird. Für dieses Verfahren muss erst das Objekt für das Bild \verb+unwrapped+ werden. Dieser Vorgang zerlegt das Objekt in sogenannten Maps.\\\\
-In der nächsten Abbildung wird auf der linken Seite eine unwrapped Map von einem Stein gezeigt, der in unseren Prototypen implementiert wird. Auf der rechten Seite ist das 3D-Objekt abgebildet.
+In der nächsten Abbildung wird auf der linken Seite eine \verb+unwrapped+ Map von einem Stein gezeigt, der in unseren Prototypen implementiert wird. Auf der rechten Seite ist das 3D-Objekt abgebildet.
 
 
 \begin{figure}[H]
@@ -35,7 +35,7 @@ In der nächsten Abbildung wird auf der linken Seite eine unwrapped Map von eine
 
 \subsection{Normal Maps}
 
-Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Objektes aufzunehmen. sDiese werden auch verwendet, um das Objekt eine simulierte Höhe und Tiefe zu geben. Bei dem folgendem Bild wird eine Normal-Map von einem Stein gezeigt.
+Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Objektes aufzunehmen. Diese werden auch verwendet, um dem Objekt eine simulierte Höhe und Tiefe zu geben. Bei dem folgendem Bild wird eine Normal-Map von einem Stein gezeigt.
 
 \begin{figure}[H]
     \centering
@@ -44,12 +44,12 @@ Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Ob
     \label{htl01}
 \end{figure}
 
-\noindent Bei der Normal-Maps ist deutlich zu erkennen, dass der blaue Bereich flach ist. Die bunten Striche zeigen hingegen Kratzer, welche der Stein beinhaltet.
+\noindent Bei der Normal-Map von der \hl{Abbildung 7.3} ist deutlich zu erkennen, dass der blaue Bereich die flache Fläche darstellt, während die Striche hingegen Kratzer zeigen, welche der Stein beinhaltet.
 
 \subsection{Maps Kombinieren}
 
 Als letzten Schritt müssen alle Maps kombiniert werden. Diese werden in dem Grafikprogramm übereinandergelegt.\\\\
-Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einem großen Detail Vielfalt. In nächste Abbildung wird das Endresultat des Steins gezeigt.
+Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einem großen Detail Vielfalt. In der nächsten Abbildung wird das Endresultat des Steines gezeigt.
 
 \begin{figure}[H]
     \centering
@@ -58,12 +58,12 @@ Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einem g
     \label{htl01}
 \end{figure}
 
-Um das Objekt in Unity zu implementieren, werden alle Maps in Unity gebraucht. Es ist auch wichtig, dass Unity ein anderes Koordinatensystem hat als Blender. Somit muss beim Export die richtige Richtung angegeben werden.  Sonst kann es passieren, dass das Objekt in Unity in eine andere Richtung zeigt.
+Um das Objekt in Unity zu implementieren, werden alle Maps in Unity gebraucht. Es ist auch wichtig zu bedenken, dass Unity ein anderes Koordinatensystem hat als Blender. Somit muss beim Export die richtige Richtung angegeben werden. Sonst kann es passieren, dass das Objekt in Unity in eine andere Richtung zeigt.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{chapters/11/Images/Koordinaten.png}
-    \caption{Eine Abbildung Unterschiedlicher Programme mit deren Koordinatensystem}
+    \caption{Eine Abbildung unterschiedlicher Programme und deren Koordinatensystemen}
     \label{htl01}
 \end{figure}
 
