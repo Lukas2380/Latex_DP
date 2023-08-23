@@ -72,12 +72,17 @@ Die zwei Hauptziele der Version 1 des Prototyen waren:
 
 \begin{figure}[h]
   \centering
-  \includegraphics*[width=0.8\textwidth]{chapters/04/images/V1/V1.png}
+  \includegraphics*[width=0.6\textwidth]{chapters/04/images/V1/V1.png}
   \caption{Die erste Version des ersten Levels entwickelt in Unity.}
   \label{fig:PE03}
 \end{figure}
 
-Text text text
+Das erste Level des Prototypen wurde mittels dem Unity Terrain Tools gemacht...
+
+
+% todo Über die erste version des ersten levels weiterschreiben und bissly über die probleme
+\todo{to be continued}
+
 
 \pagebreak
 
@@ -92,7 +97,83 @@ Für die programmierung der beweglichen Plattformen wurde ein leeres Unity Proje
   \label{fig:PE04}
 \end{figure}
 
-In der Abbildung 6.5 ist die Erstellung der beweglichen Plattformen dargestellt. Das weiße Rechteck ist die eigentliche Plattform auf der der Charakter stehen kann. Die grüne Box außerhalb ist eine 
+In der Abbildung 6.5 ist die Erstellung der beweglichen Plattformen dargestellt. Das weiße Rechteck ist die eigentliche Plattform auf der der Charakter stehen kann. Die grüne Box außerhalb ist ein \gls{boxcollider} \footnote[1]{Ein Box-Collider ist}. Dieser wurde für dieses Bild für bessere Erkennbarkeit hinausgestreckt. Die drei Punkte neben und über der Plattform sind die Wegpunkte für die Route der Plattform. Diese werden in dem \verb+WayPointFollower+ Script angesprochen. \\
+
+Ein Problem, das bei dem Testen mit einer Spielfigur aufgetreten ist, war das die Plattform unter dem Charakter weggeflogen ist. Dabei hilft aber das \verb+StickyPlatform+ Script. In diesem wird mit einem genialen Trick dieses Problem gelöst.\\
+
+Das \verb+WayPointFollower+ Script und auch das \verb+StickyPlatform+ Script werden in dem nächsten Kapiteln genauer beschrieben. 
+
+\pagebreak
+
+\subsubsection{WayPointFollower Skript}
+
+\begin{lstlisting}[language=CSharp,caption={FixedUpdate der WayPointFollower Klasse.},label=code:mainmenu]
+public class WaypointFollower : MonoBehaviour
+{
+  GameObject[] waypoints;
+  int direction = 1; // 1 for forward, -1 for backward
+
+  void FixedUpdate()
+  {
+      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
+      {
+          currentWaypointIndex += direction;
+
+          if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
+          {
+              direction *= -1; // Reverse the direction when reaching the end or start
+              currentWaypointIndex += direction * 2; // Move two steps in the opposite direction
+          }
+      }
+
+      transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
+  }
+}
+\end{lstlisting}
+
+In dem oben abgebildeten Listing 6.1 ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObject Array gespeichert. Mittels dem Index\footnote[1]{Index ist eine Stelle in einem Array.} und der \verb+direction+ Variable wird durch dieses Array durchiteriert\footnote[2]{Iterieren ist der Prozess des durchlaufen einer Sammlung von Daten.}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
+
+
+\pagebreak
+
+\subsubsection{StickyPlatform Skript}
+
+\begin{lstlisting}[language=CSharp,caption={StickyPlatform Klasse.},label=code:mainmenu]
+  public class StickyPlatform : MonoBehaviour
+  {
+      public string playerTag = "Player";
+  
+      private void OnCollisionEnter(Collision collision)
+      {
+          // Check if the colliding object has the specified tag.
+          if (collision.gameObject.CompareTag(playerTag))
+          {
+              // Reset the player's velocity to prevent unexpected behavior.
+              Rigidbody playerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+              if (playerRigidbody != null)
+              {
+                  playerRigidbody.velocity = Vector3.zero;
+              }
+  
+              // Set the platform as the parent of the player's transform.
+              collision.gameObject.transform.SetParent(transform);
+          }
+      }
+  
+      private void OnCollisionExit(Collision collision)
+      {
+          if (collision.gameObject.CompareTag(playerTag))
+          {
+              // When the player exits the collision, remove the parent relationship.
+              collision.gameObject.transform.SetParent(null);
+          }
+      }
+  }
+\end{lstlisting}
+
+In dem Listing 6.2 ist ein Ausschnitt des Codes von der StickyPlatform Klasse zu sehen. Der geniale Trick der in dieser Klasse verwendet wird ist, dass der \verb+Player+ zu einem \verb+Child+ von der beweglichen Plattform gemacht wird. Das bewirkt, dass die Plattform \glqq sticky\grqq ist. Also bewegt sich der Spieler, solange er sich auf dieser Plattform befindet, relativ zu der Plattform.
+
+\pagebreak
 
 \subsection{Herausforderungen und Fortschritt:}
 \begin{itemize}
