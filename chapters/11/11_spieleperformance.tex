@@ -5,11 +5,11 @@
 
 
 \subsection{Einführung}
-In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spielentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert. \hl{Bei der Spieleentwicklung kann man bei zwei Faktoren die Performance optimieren. Ein Faktor wäre hierbei bei die Spiel-Engine. Der andere Faktor wäre beim Modelierungsprogramm}. %todo: fix text grammar
+In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spielentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert.Bei der Spieleentwicklung kann man die Performance anhand von zwei Faktoren optimieren. Ein Faktor betrifft dabei die Spiel-Engine, während der andere Faktor das Modellierungsprogramm betrifft.. %todo: fix text grammar
 
 \subsection{Spielobjekt Optimierung im Grafikprogramm}
-Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. \hl{Weil sobald ein Polygon in Render-Distanz ist, wird dieses berechnet. Um die Polygonanzahl niedrig zu halten, werden die Details als **Objekt-Images** gezeichnet.} \\\\ %todo: change the ****
-Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. \hl{Somit mussten wir die meisten Objekte bei unseren Prototypen neu bearbeiten Dieser Vorgang wird auch 'Mapping' genannt.} %todo: fix the ""
+Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. Denn sobald sich ein Polygon in der Darstellungsdistanz befindet, wird es berechnet. Um die Anzahl der Polygone niedrig zu halten, werden die Details als "Objekt-Images" gezeichnet. \\\\ %todo: change the ****
+Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten wir die meisten Objekte in unseren Prototypen neu bearbeiten. Dieser Vorgang wird auch als 'Mapping' bezeichnet. %todo: fix the ""
 \pagebreak
 \subsection{Objekt Mapping}
 
@@ -24,7 +24,7 @@ In der nächsten Abbildung wird auf der linken Seite eine \verb+unwrapped+ Map v
     \label{htl01}
 \end{figure}
 
-\noindent \hl{Jetzt könnte man ein Image unter die unwrapped Mapp legen und damit weiterarbeiten. Auf diesem Image können nun sämtliche Details eingezeichnet werden. Wenn die Details eingezeichnet wurden, wird das Image **gebacken**. Bei dem folgenden Bild sieht man das Objekt-Image eines Steins:} %todo: maybe rewrite this
+\noindent Nun könnte man ein Bild unter das entfaltete Mapping legen und damit weiterarbeiten. Auf diesem Bild können nun sämtliche Details eingezeichnet werden. Sobald die Details eingezeichnet wurden, wird das Bild "gebacken". Im folgenden Bild sieht man das Objektbild eines Steins: %todo: maybe rewrite this
 
 \begin{figure}[H]
     \centering
@@ -49,7 +49,7 @@ Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Ob
 \subsection{Maps Kombinieren}
 
 Als letzten Schritt müssen alle Maps kombiniert werden. Diese werden in dem Grafikprogramm übereinandergelegt.\\\\
-Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber \hl{mit einem großen Detail Vielfalt}. In der nächsten Abbildung wird das Endresultat des Steines gezeigt.
+Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einer großen Vielfalt an Details. In der nächsten Abbildung wird das Endresultat des Steines gezeigt.
 
 \begin{figure}[H]
     \centering
