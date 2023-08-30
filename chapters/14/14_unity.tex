@@ -5,28 +5,32 @@
 \section{Einführung}
 Unity (auch bekannt als Unity3D) ist eine Game Engine und IDE zum kreieren von Interaktionsmedien, meißt Video Spielen. \Cite[][A history of the unity game engine]{haas2014history} \\ %todo: ide gls %todo: change all citations
 
-Die Game Engine wurde in Kopenhagen in 2005 veröffentlicht und ist bekannt für Spiele wie zum Beispiel: Among Us, Monument Valley, Pokemon Go oder dem Shooter Escape from Tarkov. Die Game Engine wurde mit C++ geschrieben, ermöglicht den Nutzern mittels der zugänglicheren Programmiersprache C\# zu arbeiten. Außerdem bietet die Game Engine die Möglichkeit mit einem Visuellen Editor die Level zu gestalten.
+Die Game Engine wurde in Kopenhagen in 2005 veröffentlicht und ist bekannt für Spiele wie zum Beispiel: Among Us, Monument Valley, Pokemon Go oder dem Shooter Escape from Tarkov. Die Game Engine wurde mit C++ geschrieben, aber ermöglicht den Nutzern mit der zugänglicheren Programmiersprache C\# zu arbeiten. Außerdem bietet die Game Engine die Möglichkeit mit einem Visuellen Editor die Level zu gestalten.
 
 \subsection{Game Objects und Komponenten}
-Jedes Game-Object, oder auch Spiel Objekt in Deutsch, kann eine Vielzahl von Komponenten annehmen. Die nächsten Unterkapitel beschreiben verschiedene solcher Komponenten
+Jedes Game-Object, oder auch Spiel Objekt in Deutsch, kann eine Vielzahl von Komponenten annehmen. Die nächsten Unterkapitel beschreiben verschiedene solcher Komponenten beschrieben und Bildlich dargestellt.
 
 \subsubsection{Das Mesh}
-\glqq A mesh consists of triangles arranged in 3D space to create the impression of a solid object. \grqq \Cite[][Anatomy of a Mesh]{unitydoc}\\
-Ein sogenanntes Mesh definiert das physikalische Objekt. Wie in dem Unity Artikel \verb+Anatomy of a Mesh+ beschrieben ist, besteht das Mesh eines Objektes aus, im 3 Dimensionalen Raum positionierten, Dreiecken die ein solides Objekt darstellen sollen.\\
+\glqq A mesh consists of triangles arranged in 3D space to create the impression of a solid object. \grqq \Cite[][Anatomy of a Mesh, Unity Documentation]{unitydoc}\\
+Ein sogenanntes Mesh definiert das physikalische Objekt. Wie in dem Unity Artikel \verb+Anatomy of a Mesh+ beschrieben ist, besteht das Mesh eines Objektes aus, im 3 Dimensionalen Raum positionierten, Dreiecken die ein solides Objekt darstellen sollen.\\\\
 \noindent
 \includegraphics[width=1\linewidth]{chapters/14/Images/Mesh2.png}
 
 \pagebreak
 
 \subsubsection{Der Mesh Renderer}
-Der Mesh Renderer ist dafür verantwortlich Materalien und Lichteffekte wie Reflextionen bei einem Objekt darzustellen.\\
+Der Mesh Renderer ist dafür verantwortlich Materalien und Lichteffekte wie Reflextionen bei einem Objekt darzustellen. Wie in der nächsten Abbildung dargestellt, kann mit dem Mesh Renderer ein Material dem Game-Objekt hinzugefügt werden.\\
 \noindent
 \includegraphics[width=0.7\linewidth]{chapters/14/Images/MeshRenderer.png}
 
 \subsubsection{Die Physics Komponenten}
-\glqq Adding a Rigidbody component to an object will put its motion under the control of Unity's physics engine. Even without adding any code, a Rigidbody object will be pulled downward by gravity and will react to collisions with incoming objects if the right Collider component is also present. \grqq \cite[][Rigidbody]{unitydocRigidbody} \\
+\glqq Wenn ein Rigidbody Komponent zu einem Objekt hinzugefügt wird, dann ist die Bewegung des Objektes unter der Kontrolle von Unitys Physik Engine. Selbst ohne Hinzufügen von Code wird ein Rigidbody-Objekt durch die Schwerkraft nach unten gezogen werden und auf Kollisionen mit einfallenden Objekten reagieren, wenn auch das passende Collider-Komponente vorhanden ist.\grqq \cite[][Rigidbody, Unity Documentation]{unitydocRigidbody} \\
+
 \noindent
 \includegraphics[width=0.7\linewidth]{chapters/14/Images/Physics.png}
+
+\subsubsection{Script Komponente}
+Zudem ist es Möglich einem Game-Objekt ein eigenes Script als Komponente hinzuzufügen. Mit C\# Code ist es möglich eigene Fähigkeiten oder Attribute dem Objekt zu geben. Zum Beispiel kann eine Variable für HP\footnote[1]{Healthpunkte oder Lebenspunkte} angelegt werden. Wenn dieses Game-Objekt dann durch Kontakt mit einem Gegner schaden bekommt, werden Lebenspunkte abgezogen. Wenn diese dann auf Null gelangen, kann mit dem Code das Game-Objekt deaktiviert werden
 
 
 \pagebreak

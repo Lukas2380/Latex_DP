@@ -1,54 +1,53 @@
 \setauthorname{Lukas Schachinger}
 
 % Das ist nur Beispiel was wir schreiben könnten
-\pagebreak
-\section{Planung und Konzeption des Spiels}
-\subsection{Story und Theme:}
-\begin{enumerate}
-  \item Vorstellung der Spielidee und des Storykonzepts.
-  \item Beschreibung der Hintergrundgeschichte und Charaktere.
-  \item Erklärung des gewählten Spielthemas und seiner Relevanz für die Spielerfahrung.
-\end{enumerate}
+%\pagebreak
+%\section{Planung und Konzeption des Spiels}
+%\subsection{Story und Theme:}
+%\begin{enumerate}
+%  \item Vorstellung der Spielidee und des Storykonzepts.
+%  \item Beschreibung der Hintergrundgeschichte und Charaktere.
+%  \item Erklärung des gewählten Spielthemas und seiner Relevanz für die Spielerfahrung.
+%\end{enumerate}
 
-\subsection{Leveldesign:}
-\begin{enumerate}
-  \item Einführung in das Leveldesign und seine Bedeutung für das Spielerlebnis.
-  \item Beschreibung der geplanten Level, ihrer Ziele und Herausforderungen.
-  \item Eventuell Skizzen oder Diagramme, die die Levelstruktur verdeutlichen.
-\end{enumerate}
+%\subsection{Leveldesign:}
+%\begin{enumerate}
+%  \item Einführung in das Leveldesign und seine Bedeutung für das Spielerlebnis.
+%  \item Beschreibung der geplanten Level, ihrer Ziele und Herausforderungen.
+%  \item Eventuell Skizzen oder Diagramme, die die Levelstruktur verdeutlichen.
+%\end{enumerate}
 
-\subsection{UI-Design und User Experience:}
-\begin{enumerate}
-  \item Beschreibung des geplanten User Interfaces und dessen Funktionen (z. B. HUD, Menüs).
-  \item Erklärung der gestalterischen Entscheidungen und UI-Elemente (z. B. Symbole, Farben).
-  \item Diskussion der User Experience und wie sie das Gameplay beeinflusst.
-\end{enumerate}
-
-\subsection{Gameobjekte und deren Platzierung:}
-\begin{enumerate}
-  \item Vorstellung der verschiedenen Gameobjekte im Spiel und ihrer Funktionen.
-  \item Diskussion der Platzierung und Verteilung der Gameobjekte in den Leveln.
-  \item Erklärung, wie die Gameobjekte mit der Spielmechanik interagieren.
-\end{enumerate}
-
-\subsection{Spielanleitung und Steuerung:}
-\begin{enumerate}
-  \item Erstellung einer detaillierten Spielanleitung für die Spieler.
-  \item Beschreibung der Steuerungsmöglichkeiten und Interaktionsmechanismen.
-  \item Eventuell Integration von Tutorials oder Hilfestellungen für neue Spieler.
-\end{enumerate}
+%\subsection{UI-Design und User Experience:}
+%\begin{enumerate}
+%  \item Beschreibung des geplanten User Interfaces und dessen Funktionen (z. B. HUD, Menüs).
+%  \item Erklärung der gestalterischen Entscheidungen und UI-Elemente (z. B. Symbole, Farben).
+%  \item Diskussion der User Experience und wie sie das Gameplay beeinflusst.
+%\end{enumerate}
+%
+%\subsection{Gameobjekte und deren Platzierung:}
+%\begin{enumerate}
+%  \item Vorstellung der verschiedenen Gameobjekte im Spiel und ihrer Funktionen.
+%  \item Diskussion der Platzierung und Verteilung der Gameobjekte in den Leveln.
+%  \item Erklärung, wie die Gameobjekte mit der Spielmechanik interagieren.
+%\end{enumerate}
+%
+%\subsection{Spielanleitung und Steuerung:}
+%\begin{enumerate}
+%  \item Erstellung einer detaillierten Spielanleitung für die Spieler.
+%  \item Beschreibung der Steuerungsmöglichkeiten und Interaktionsmechanismen.
+%  \item Eventuell Integration von Tutorials oder Hilfestellungen für neue Spieler.
+%\end{enumerate}
 
 % todo: remove this
-\todo{remove this...}
+%\todo{remove this...}
 
 \chapter{User Interface (UI) und Interaktion}
 
 \begin{quote}
-\emph{\glqq Im Interface begegnet der Spieler dem Spiel. [...] Die Schnittstelle zwischen Mensch und Computer/Konsole etc.\grqq}~\cite[p.~161]{GameDesign} \\
+\emph{\glqq Im Interface begegnet der Spieler dem Spiel. [...] Die Schnittstelle zwischen Mensch und Computer/Konsole etc.\grqq}~\cite[p.~161]{GameDesign} \\ %todo: citation change
 \end{quote}
 
-Das UI im Spieldesign ist fast der wichtigste Teil der Spielentwicklung, wenn man das Design des eigentlichen Spieles außen vornimmt. 
-Ohne eine gute Menu führung und ein gut entworfenes User Interface ist es schwer, dass Spielerinnen und Spieler das Spiel verstehen und spielen können. 
+Das \gls{UI}\footnote[1]{\glsentrydesc{UI}} im Spieldesign ist fast der wichtigste Teil der Spielentwicklung, wenn man das Design des eigentlichen Spieles außen vornimmt. Ohne eine gute Menuführung und ein gut entworfenes User Interface ist es schwer, dass Spielerinnen und Spieler das Spiel verstehen und spielen können. 
 
 \begin{figure}[H]
   \centering
@@ -57,43 +56,41 @@ Ohne eine gute Menu führung und ein gut entworfenes User Interface ist es schwe
   \label{htl01}
 \end{figure}
 
-Der abgebildete Dialogbaum zeigt die verschiedenen Menüs und Screens die ein Computerspiel haben kann.
-Diese unterscheiden sich in den unterschiedlichen Arten von Spielen. 
-Bei einem \gls{multiplayer} Spiel soll die Möglichkeit geboten werden ein Spiel zu erstellen oder einem beizutreten. 
-Während es bei einem \gls{singleplayer} wichtig ist Spielstände zu speichern und zu laden.
+Der abgebildete Dialogbaum zeigt die verschiedenen Menüs und Screens die ein Computerspiel haben kann. Diese unterscheiden sich in den unterschiedlichen Arten von Spielen. Bei einem \gls{multiplayer}\footnote[2]{\glsentrydesc{multiplayer}}-Spiel soll die Möglichkeit geboten werden, ein Spiel zu erstellen oder einem beizutreten. Während es bei einem \gls{singleplayer}\footnote[3]{\glsentrydesc{singleplayer}} wichtig ist, Spielstände speichern und laden zu können.
 
 \pagebreak
 
-Das \gls{UI} des Prototyps unterteilt sich in 3 verschiedene Aspekte:
+Das User Interface des Prototyps unterteilt sich in drei verschiedene Aspekte:
 
 \begin{itemize}
-    \item Das Hauptmenü.
-    \item Das \gls{UI} während des Spieles.
-    \item Das Pause Menu.
+    \item Hauptmenü
+    \item User Interface während des Spieles
+    \item Pausemenü
 \end{itemize}
 
 \noindent
 Bei der Entscheidung, welche Komplexität das User Interface des Prototyps haben soll, fiel die Wahl auf ein simples Design. 
-Das \gls{UI} soll einerseits die Schlichtheit des eigentlichen Spieles wiederspiegeln und andererseits alle für das Spiel wichtigen Informationen darstellen.
+Das User Interface soll einerseits die Schlichtheit des eigentlichen Spieles wiederspiegeln und andererseits alle für das Spiel wichtigen Informationen darstellen.
 
 \section{Gestaltung des Hauptmenüs}
 
 Im Folgenden wird das Gestalten der Benutzeroberfläche für das Hauptmenü erläutert. 
 Das Hauptmenü in der Spielentwicklung ist vergleichbar mit einem Türvorleger vor einer Haustür. Es soll das Willkommenschild für das eigentliche Spiel sein. 
-Mithilfe dieses ersten Eindrucks ist es möglich zu erkennen um welche Art von Spiel es sich handelt. Das \gls{theme} des Spieles spiegelt sich in dem Design des Hintergrundes und in der Schriftart des Hauptmenüs wieder. Die Komplexität steht bei vielen Spielen in direkter Korrelation mit der Anzahl an Einstellungen in dem Hauptmenü.
+Mithilfe dieses ersten Eindrucks ist es möglich zu erkennen, um welche Art von Spiel es sich handelt. Das \gls{theme}\footnote[1]{\glsentrydesc{theme}} des Spieles spiegelt sich in dem Design des Hintergrundes und in der Schriftart des Hauptmenüs wieder. Die Komplexität steht bei vielen Spielen in direkter Korrelation mit der Anzahl an Einstellungen in dem Hauptmenü.
 
 \pagebreak
 
 \subsection{Das Hauptmenü des Prototyps}
 
-Das Hauptmenü des Prototyps besteht aus mehreren Komponenten. Die Hauptkomponente ist ein \gls{canvas}. Diesem untergeordnet ist ein Bild, ein \gls{gameObject} für das Hauptmenü und ein \gls{gameObject} für das Optionsmenü. Diese beiden GameObjecte sind die eigentlichen Menüs die dementsprechen ein- und ausgeblendet werden. Die Knöpfe die der User betätigen kann sind den Gameobjecten für das Hauptmenü und dem Optionsmenü untergeordnet. 
+Das Hauptmenü des Prototyps besteht aus mehreren Komponenten. Die Hauptkomponente ist ein \gls{canvas}\footnote[1]{\glsentrydesc{canvas}}. Diesem untergeordnet ist ein Bild, ein \gls{gameObject}\footnote[2]{\glsentrydesc{gameObject}} für das Hauptmenü und ein Game-Objekt für das Optionsmenü. Diese beiden Spiel-Objekte sind die eigentlichen Menüs, die dementsprechen ein- und ausgeblendet werden. Die Knöpfe, die der User betätigen kann, sind den Game-Objek<ten für das Hauptmenü und dem Optionsmenü untergeordnet. 
+
 \subsubsection{Der Hintergrund}
-Der Hintergrund des Hauptmenüs ist ein PNG von der \gls{skybox} des Spiels. 
+Der Hintergrund des Hauptmenüs ist ein PNG von der \gls{skybox}\footnote[3]{\glsentrydesc{skybox}} des Spiels. 
 
 \subsubsection{Die Buttons}
 Die unten abgebildeten Abbildungen zeigen das Hauptmenü (links) und das Optionsmenü (rechts) des Prototyps. In dem Hauptmenü gibt es drei verschiedene Buttons: Play, Options and Quit. Play startet den Spielablauf, Options öffnet das Optionsmenü und Quit schließt das Spiel.\\\\
 In dem Optionsmenü befindet sich die Lautstärkenregelung und... \\
-Der "Back" Button um zurück in das Hauptmenü zu kommen befindet sich an letzter Stelle des Optionsmenüs.
+Der "Back" Button dient dazu zurück in das Hauptmenü zu kommen, befindet sich an letzter Stelle des Optionsmenüs.
 
 
 \begin{figure}[H]
@@ -197,13 +194,13 @@ Eine Darstellung der Steuerung auf dem User Interface ist ein einfacher Weg, das
 \section{Optionen und Einstellungen}
 
 % todo: continue this when ui better
-\todo{Tbd...}
+%\todo{Tbd...}
 
 \section{Pause-Funktion und Benutzerfreundlichkeit}
 Die Pause-Funktion ist ein wichtiger Teil eines Spiels. 
 
 % todo: continue this
-\todo{continue this?}
+%\todo{continue this?}
 
 \begin{figure}[H]
   \centering

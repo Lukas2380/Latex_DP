@@ -1,8 +1,177 @@
 \pagebreak
 \chapter{Scripte}
-
-\section{Player Script}
-
-\section{Enemy Script}
+In diesem Kapitel werden die Scripte des Spieles als Code Blöcke dargestellt und erklärt. 
 
 \section{Münzen Script}
+Das Münzen Script ist dafür verantwortlich, dass die Münzen einsammelbar sind. 
+% C#
+\begin{lstlisting}[language=CSharp,caption={Coin Klasse.},label=code:coin]
+    public class Coin : MonoBehaviour
+    {
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == player)
+            {
+                float distance = Vector3.Distance(transform.position, player.transform.position);
+                
+                if (distance <= collectionRange)
+                {
+                    coinCounterText.text = (Int32.Parse(coinCounterText.text) + 1).ToString();
+                    
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
+\end{lstlisting}   
+
+Die Funktion der \verb+Coin+ Klasse ist sehr simpel. Zuerst wird geschaut ob es eine Collision mit einem anderem Game-Objekt gegeben hat. Wenn dieses andere Game-Objekt der Player war, wird noch die Distanz zu dem Player geprüft. Falls die Distanz innerhalb des Aufsammelradius ist, wird der \verb+coinCounterText+ von dem User Interface hochgezählt und die Münze zerstört.
+
+
+\pagebreak
+\section{Player Scripte}
+Der Code für den Player unterteilt sich in zwei verschiedene Scripte. Einerseits gibt es die \verb+Player+ Klasse die für die Lebenspunkte des Spielers verantwortlich ist. Andererseits gibt es das \verb+PlayerMovement+ Script, welches für die Kontrolle über den Charakter verantwortlich ist. \\
+
+\subsection{Player Klasse}
+% C#
+\begin{lstlisting}[language=CSharp,caption={Player Klasse.},label=code:player]
+    public class Player : MonoBehaviour
+    {
+        public int maxHealth = 100;
+        public int currentHealth;
+        public Healthbar healthbar;
+        
+        void Start()
+        {
+            currentHealth = maxHealth;
+            healthbar.SetMaxHealth(maxHealth);
+        }
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            healthbar.SetHealth(currentHealth);
+        }
+    }
+\end{lstlisting}
+
+Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. 
+
+\pagebreak
+\subsection{PlayerMovement Klasse}
+Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. Der Code der dem Spieler es Ermöglicht sich zu bewegen und die Funktion für das Springen.\\
+
+% C#
+\begin{lstlisting}[language=CSharp,caption={CharacterMovement},label=code:charactermovement]
+    void CharacterMovement() {
+        rotation.y += Input.GetAxis("Mouse X");
+        transform.eulerAngles = (Vector2)rotation * 3f;
+        
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveZ = Input.GetAxisRaw("Vertical");
+    
+        Vector3 direction = new Vector3(moveX, 0, moveZ);
+        direction.Normalize();
+        transform.Translate(direction * (speed * Time.deltaTime));
+    }
+\end{lstlisting}
+
+Es gibt zwei Wege wie das Bewegen der Spielfigur gehandhabt werden kann. Entweder ist die Bewegung statisch, oder sie ist dynamisch wie es in dem Listing 7.3 dargestellt ist. Die Methode nimmt die horizontale Bewegung der Maus und berechnet sich in welche Richtung sich der Charakter bewegen muss.\\
+
+% C#
+\begin{lstlisting}[language=CSharp,caption={Jump \& DoubleJump der PlayerMovement Klasse.},label=code:player]
+    if (IsGrounded()){
+        hasDoubleJump = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * JumpHeight, ForceMode.Impulse);
+            //jumpSound.Play();
+        }
+    } else if (Input.GetKeyDown(KeyCode.Space) && hasDoubleJump){
+        hasDoubleJump = false;
+        rb.AddForce(transform.up * doubleJumpHeight, ForceMode.Impulse);
+    }
+\end{lstlisting}
+
+Bei dem Code für das Springen muss zuerst geschaut werden, ob der Player auf dem Boden steht. Sobald dann die Springen-Taste gedrückt wird, wird dem Rigidbody des Charakters eine \verb+Force+ also eine vertikale Kraft nach oben addiert. Die Funktion wird bei dem zweiten Drücken der Sprung-Taste in der Luft ausgeführt.
+
+\pagebreak
+\section{Enemy Script}
+
+% C#
+\begin{lstlisting}[language=CSharp,caption={EnemyController},label=code:]
+public class EnemyController : MonoBehaviour
+{
+    private void Update()
+    {
+        //Check for sight and attack range
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+
+        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if(playerInSightRange && playerInAttackRange) AttackPlayer();
+    }
+
+    private void Patroling()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        if (distanceToWalkPoint.magnitude < 1f)
+            walkPointSet = false;
+    }
+
+    private void SearchWalkPoint()
+    {
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            walkPointSet = true;
+    }
+
+    private void ChasePlayer()
+    {
+        agent.SetDestination(player.position);
+    }
+
+    private void AttackPlayer()
+    {
+        //Make sure enemy doesnt move
+        agent.SetDestination(transform.position);
+        
+        transform.LookAt(player);
+
+        if (!alreadyAttacked)
+        {
+            //Attack code
+            Debug.Log("Attacking...");
+            // Call the TakeDamage method from the Player script
+            playerScript.TakeDamage(damageAmount);
+
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+}
+\end{lstlisting}
