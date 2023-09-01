@@ -21,7 +21,6 @@ out/
 *.out
 *.synctex.gz
 *.toc
-*.bcf
 
 # Build output
 *.pdf
