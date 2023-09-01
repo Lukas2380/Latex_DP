@@ -36,24 +36,24 @@ Das Konzept und die Anfangsschritte unterteilen sich in die folgenden Gebiete:
 
 Die ersten Scritte bei dem Entwickeln eines Videospiels sind beginnen immer mit einem Brain-Storming. Die ersten Ideen für diesen Prototypen waren das Theme, das Layout des ersten Levels und das ungefähre Design des Charakters.
 
-  \begin{figure}[h]
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
     \centering
-    \begin{minipage}[b]{0.45\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{chapters/04/images/V1/drawing.jpg}
-      \caption{Konzeptzeichnung und Ideenfindung}
-      \label{fig:PE01}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.45\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{chapters/04/images/V1/CharScetch.png}
-      \caption{Design des Hauptcharakters}
-      \label{fig:PE02}
-    \end{minipage}
-    \caption{Idee und Anfangsschritte}
-    \label{fig:IdeeThema}
-  \end{figure}
+    \includegraphics[width=\textwidth]{chapters/04/images/V1/drawing.jpg}
+    \caption{Konzeptzeichnung und Ideenfindung}
+    \label{fig:PE01}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/04/images/V1/CharScetch.png}
+    \caption{Design des Hauptcharakters}
+    \label{fig:PE02}
+  \end{minipage}
+  \caption{Idee und Anfangsschritte}
+  \label{fig:IdeeThema}
+\end{figure}
 
   In der linken Abbildung sieht man die Konzeptzeichnung für das erste Level. In der Zeichnung ist eine von hohen Felsen abegrenzte Welt dargestellt. In der Mitte führt ein Pfad zu einem See. Über diesen schweben Plattformen. Vor dem See über den Weg ist eine Holzbrücke auf der sich Münzen befinden. Die roten Punkte auf der anderen Seite des Wassers sind Gegner und am Ende des Pfades ist ein Portal das zum Nächsten Level führt.
   In der rechten Abbildung ist das erste Design des Hauptcharakters dargestellt. Die überlegung war, eine Kaputzentragende Eule mit einem Menschenkörper zu mischen. Die Zeichnung zeigt den Charakter von Vorne und von der Seite. Der Text in der zweiten Abbildung ist eine Ideensammlung für die verschiedenen Attacken des Charakters. 
@@ -77,7 +77,7 @@ Die zwei Hauptziele der Version 1 des Prototyen waren:
   \label{fig:PE03}
 \end{figure}
 
-Das erste Level des Prototypen wurde mittels dem Unity Terrain Tools gemacht. Mit diesem Tool können erhöhung aus einer Platte erstellt werden. Mit diesem Tool können auch Objekte wie Gräser und Bäume dynamisch auf den Grund des Levels plaziert werden. Das Untiy-Tool kann genauso die Platform bemalen. Dieses Tool ist zwar sehr mächtig, jedoch hat es auch seine Schwächen. Nach dem das Grundgerüst fertig war mussten noch Assets wie Bäume, Münzen und Gegner erstellt werden. Diese wurden in Blender Designed und erstellt. Diese wurden dann in Blener als FBX Datei Importiert. Wichtig war beim Importieren, dass Unity und Blender ein Unterschiedliches Koordinaten System verwendet. 
+Das erste Level des Prototypen wurde mittels dem Unity Terrain Tools gemacht. Mit diesem Tool können erhöhung aus einer Platte erstellt werden. Mit diesem Tool können auch Objekte wie Gräser und Bäume dynamisch auf den Grund des Levels plaziert werden. Das Untiy-Tool kann genauso die Platform bemalen. Dieses Tool ist zwar sehr mächtig, jedoch hat es auch seine Schwächen. Nach dem das Grundgerüst fertig war mussten noch Assets wie Bäume, Münzen und Gegner erstellt werden. Diese wurden in Blender Designed und erstellt. Diese wurden dann in Blender als FBX Datei Importiert. Wichtig war beim Importieren, dass Unity und Blender ein Unterschiedliches Koordinaten System verwendet. 
 
 
 % todo Über die erste version des ersten levels weiterschreiben und bissly über die probleme
@@ -88,7 +88,7 @@ Das erste Level des Prototypen wurde mittels dem Unity Terrain Tools gemacht. Mi
 
 \subsection{Programmierung der beweglichen Plattformen:}
 
-Für die programmierung der beweglichen Plattformen wurde ein leeres Unity Projekt angelegt. Dies bietet die Möglichkeit, ohne Auswirkungen auf den Prototypen zu Testen. Ein weiterer Vorteil ist, dass bei fatalen Fehlern einfach komplett neu begonnen werden kann. 
+Für die Programmierung der beweglichen Plattformen wurde ein leeres Unity Projekt angelegt. Dies bietet die Möglichkeit, ohne Auswirkungen auf den Prototypen zu Testen. Ein weiterer Vorteil ist, dass bei fatalen Fehlern einfach komplett neu begonnen werden kann. 
 
 \begin{figure}[h]
   \centering
@@ -97,129 +97,123 @@ Für die programmierung der beweglichen Plattformen wurde ein leeres Unity Proje
   \label{fig:PE04}
 \end{figure}
 
-In der Abbildung 6.5 ist die Erstellung der beweglichen Plattformen dargestellt. Das weiße Rechteck ist die eigentliche Plattform auf der der Charakter stehen kann. Die grüne Box außerhalb ist ein \gls{boxcollider} \footnote[1]{Ein Box-Collider ist}. Dieser wurde für dieses Bild für bessere Erkennbarkeit hinausgestreckt. Die drei Punkte neben und über der Plattform sind die Wegpunkte für die Route der Plattform. Diese werden in dem \verb+WayPointFollower+ Script angesprochen. \\
+In der Abbildung 6.5 ist die Erstellung der beweglichen Plattformen dargestellt. Das weiße Rechteck ist die eigentliche Plattform auf der der Charakter stehen kann. Die grüne Box außerhalb ist ein \gls{boxcollider} \footnote[1]{Ein Box-Collider ist}. Dieser wurde für dieses Bild für bessere Erkennbarkeit hinausgestreckt. Die drei blauen Punkte neben und über der Plattform sind die Wegpunkte für die Route der Plattform. Diese werden in dem \verb+WayPointFollower+ Script angesprochen. \\
 
 Ein Problem, das bei dem Testen mit einer Spielfigur aufgetreten ist, war das die Plattform unter dem Charakter weggeflogen ist. Dabei hilft aber das \verb+StickyPlatform+ Script. In diesem wird mit einem genialen Trick dieses Problem gelöst.\\
 
-Das \verb+WayPointFollower+ Script und auch das \verb+StickyPlatform+ Script werden in dem nächsten Kapiteln genauer beschrieben. 
+Das \verb+WayPointFollower+ Script und auch das \verb+StickyPlatform+ Script werden in dem \verb+Skripte+ Kapitel genauer beschrieben. 
 
 \pagebreak
 
-\subsubsection{WayPointFollower Skript}
-
-\begin{lstlisting}[language=CSharp,caption={FixedUpdate der WayPointFollower Klasse.},label=code:mainmenu]
-public class WaypointFollower : MonoBehaviour
-{
-  GameObject[] waypoints;
-  int direction = 1; // 1 for forward, -1 for backward
-
-  void FixedUpdate()
-  {
-      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
-      {
-          currentWaypointIndex += direction;
-
-          if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
-          {
-              direction *= -1; // Reverse the direction when reaching the end or start
-              currentWaypointIndex += direction * 2; // Move two steps in the opposite direction
-          }
-      }
-
-      transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
-  }
-}
-\end{lstlisting}
-
-In dem oben abgebildeten Listing 6.1 ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObject Array gespeichert. Mittels dem Index\footnote[1]{Index ist eine Stelle in einem Array.} und der \verb+direction+ Variable wird durch dieses Array durchiteriert\footnote[2]{Iterieren ist der Prozess des durchlaufen einer Sammlung von Daten.}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
-
-
-\pagebreak
-
-\subsubsection{StickyPlatform Skript}
-
-\begin{lstlisting}[language=CSharp,caption={StickyPlatform Klasse.},label=code:mainmenu]
-  public class StickyPlatform : MonoBehaviour
-  {
-      public string playerTag = "Player";
-  
-      private void OnCollisionEnter(Collision collision)
-      {
-          // Check if the colliding object has the specified tag.
-          if (collision.gameObject.CompareTag(playerTag))
-          {
-              // Reset the player's velocity to prevent unexpected behavior.
-              Rigidbody playerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-              if (playerRigidbody != null)
-              {
-                  playerRigidbody.velocity = Vector3.zero;
-              }
-  
-              // Set the platform as the parent of the player's transform.
-              collision.gameObject.transform.SetParent(transform);
-          }
-      }
-  
-      private void OnCollisionExit(Collision collision)
-      {
-          if (collision.gameObject.CompareTag(playerTag))
-          {
-              // When the player exits the collision, remove the parent relationship.
-              collision.gameObject.transform.SetParent(null);
-          }
-      }
-  }
-\end{lstlisting}
-
-In dem Listing 6.2 ist ein Ausschnitt des Codes von der StickyPlatform Klasse zu sehen. Der geniale Trick der in dieser Klasse verwendet wird ist, dass der \verb+Player+ zu einem \verb+Child+ von der beweglichen Plattform gemacht wird. Das bewirkt, dass die Plattform \glqq sticky\grqq ist. Also bewegt sich der Spieler, solange er sich auf dieser Plattform befindet, relativ zu der Plattform.
-
-\pagebreak
 
 \subsection{Herausforderungen und Fortschritt:}
-\begin{itemize}
-  \item Bewältigung technischer Herausforderungen während der V1-Entwicklung
-  \item Erkennung von Leistungsproblemen aufgrund von Polygonanzahlen
-  \item Vorbereitung für die Optimierung in Version 2 des Prototyps (V2)
-\end{itemize}
+%\begin{itemize}
+ % \item Bewältigung technischer Herausforderungen während der V1-Entwicklung
+  %\item Erkennung von Leistungsproblemen aufgrund von Polygonanzahlen
+ % \item Vorbereitung für die Optimierung in Version 2 des Prototyps (V2)
+%\end{itemize}
 
+Bei der ersten Version des Prototypen gab es noch viele Probleme. In den nächsten Punkten werden diese genauer Beschrieben. Welche Auswirkungen jeder dieser Fehler auf das Spiel hat und wie dieser behoben wurde.
+
+\subsubsection{Unity Terrain Tools}
+Bei der ersten Version war noch der Plan das erste Level mit den Unity Terrain Tools zu machen. Jedoch hat es sich schnell herausgestellt, dass dieses Tool nicht der richtige Ansatz für den Prototyen ist. Es gab Probleme bei dem Erstellen von dem Terrain und den schon erstellten Assets. Eine einfache Lösung dafür war, das Tool nichtmehr zu verwenden. Demnach der Umstieg auf Blender. Alle weiteren Versionen des Prototypen wurden mit Blender gemacht.
+
+\subsubsection{Polygonanzahlen}
+Assets wie die Brücke oder der Hauptcharakter wurden schon vorher in Blender erstellt. Es gab Unklarheiten bei der Auswirkung von hohen Polygonanzahlen. Diese beiden Assets wurden sehr detailliert modelliert. Das hatte die Auswirkung, dass bei dem Spielen des Prototypen die Perfomance gelitten hat. Lösung des Problemes war die neue Erstellung dieser Assets mit ungefähr 10.000 Polygonen anstatt 3 Millionen.
+
+\subsubsection{Movement Skript}
+Das Movement Skript der ersten Version hat ebenfalls gröbere Fehler enthalten. Der größte Fehler war die Verwendung der Funktion für die Bewegung der Spielfigur. Das Problem war, dass wenn der Player sich diagonal bewegte, wurde Bewegungsgeschwindigkeit von den zwei Richtungen addiert. Die Lösung des Problemes war, die Bewegungsrichtung zuerst herauszufinden und dann erst die Bewegungsgeschwindigkeit zu multiplizieren.
 
 \pagebreak
 
 \section{Version 2 des Prototyps}
 
-\begin{itemize}
-  \item Optimierung und Fortschritt:
-    \begin{itemize}
-      \item Weiterentwicklung des Prototyps zu Version 2 (V2) zur Leistungsoptimierung und Verbesserung der Spielmechanik
-      \item Design und Implementierung des Benutzeroberflächen-Designs (UI), einschließlich Hauptmenü, Pausemenü und Ingame-UI
-      \item Erstellung zusätzlicher Spielassets wie Bäume, bewegliche Plattformen, Steine, Fässchen und Münzen
-    \end{itemize}
-\end{itemize}
+Bei der zweiten Version des Prototypen musste das erste Level, der Charakter und andere Assets neu modelliert werden. Als neue addition kam das UI und weitere Assets dazu. Eine weiter Änderung war die farbliche Anpassung der Objekte an das Theme. 
 
-Bei der Version 2 unseres Prototypen ist die Herausforderung gewesen die Assets performanteren Stand zu bringen. Der Grund dafür war das sich rausgestellt hatte das zwar die Assets zwar optisch gut waren aber die Perfomance lied deutlich darunter. Um das zu verhindern mussten alle Objekte nochmal überarbeitet werden sowie die Hauptfigur. Nach der Überarbeitung ist die Perfomance besser geworden. Weiteres wurden die Objekte Farblich an das Theme angepasst. Zu dem wurden die Scripts für das Playmovment und die Platformen Angepasst. Zudem wurden weitere Umgebungsobjekte erstelltt, wie Steine Fässer etc. Somit wirkt das Level weniger Leer. 
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics*[width=0.6\textwidth]{chapters/04/images/V2/char.png}
+    \caption{Der neue Charakter für die V2 des Prototypen.}
+    \label{fig:PE05}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics*[width=0.6\textwidth]{chapters/04/images/V2/r4.png}
+    \caption{Das Eulenmünzen Asset.}
+    \label{fig:PE06}
+  \end{minipage}
+  \vfil
+  \begin{minipage}[b]{1\textwidth}
+    \centering
+    \includegraphics*[width=1\textwidth]{chapters/04/images/V2/V2.jpg}
+    \caption{Die zweite Version des ersten Levels.}
+    \label{fig:PE07}
+  \end{minipage}
+\end{figure}
+
+In den drei Abbildungen oberhalb ist der neue Charakter, die Eulenmünze und die zweite Version des ersten Levels dargestellt. Die Münze ist eines von vielen neu erstellten Assets. Unter anderem wurden noch Fässer, bewegliche Plattformen, Bäume und Steine modelliert.
+\pagebreak
+
+\subsection{Herausforderungen und Fortschritt:}
+
+Bei der Erstellung der zweiten Version des Prototypen sind fast keine Probleme aufgetaucht. Die Entscheidung einen dritten Protoypen zu machen kam daher, weil die Entwicklung des Prototypen zu einem Stillstand gekommen ist. Eine gute Idee war der Neustart des Prototypen und daher der Anfang von der finalen Version. Ein weiterer Grund für den Neuanfang war, dass die zweite Version vom ersten Level nicht den selbst gesetzten Anforderungen entsprochen hat.  
 
 \pagebreak
 
 \section{Finaler Prototyp}
 
-\begin{itemize}
-  \item Abschlussarbeiten am Prototyp:
-    \begin{itemize}
-      \item Fertigstellung des ersten Levels im finalen Prototyp
-      \item Konzeption und Aufbau des zweiten Spiellevels
-      \item Umgestaltung und Optimierung des gesamten Benutzeroberflächen-Designs
-    \end{itemize}
-    
-  \item Zusammenfassung und Ausblick:
-    \begin{itemize}
-      \item Zusammenführung der Entwicklungsphasen zu einem finalen Prototypen
-      \item Fortlaufende Arbeit an der Fertigstellung des zweiten Levels und Feinschliff des Spielerlebnisses
-      \item Ziel, ein ansprechendes und unterhaltsames Spielerlebnis zu bieten
-    \end{itemize}
-\end{itemize}
+In der finalen Version des Prototypen lag das Ziel in der fertigstellung der Diplomarbeit reifen Endversion. Es wurden das erste Level und der Hauptcharakter erneut in Blender erstellt. Noch dazu wurden alle Skripte und das User Interface überarbeitet. 
+
+\subsection{Level 1}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics*[width=0.8\textwidth]{chapters/04/images/V3/Level1.png}
+  \caption{}
+  \label{fig:PE08}
+\end{figure}
+
+Die finalen Schritte bei dem ersten Level waren die Positionierung aller Assets, Münzen und Gegner. Die Erweiterung des User Interfaces. Zusätzlich die Implementation des Portales am Ende des Weges und des verbesserten AIs der Gegner.
+
+\subsubsection{Gegner}
 
 
-In der finalen Version, wurde der Entschluss gefasst das die Map nochmal in Blender erstellt wird. Der Grund für diesen Schritt, dass in Blender die Tools ausgereifter für eine Level erstellung sind. Somit wirkt die Map schöner und perfomanter. Zudem gibt es schon Ansätze für das zweite Level. Aufgrund von zeitlichen Gründen haben wir es nicht geschafft das zweite Level fertig zustellen. In der letzten version wurde eine Animation für die Münzen erstellt. Die Münzen rotieren um ihre eigenen Achse herum sobald das Spiel startet. Das hat den zweck das Spiel lebhafter zu wirken. Zu dem wurde die Funtkion erstellt, das Münzen eingesammelt werden können. Die eingesammelten Münzen werden dann auf den oberen linken Eck des Bildschirms angezeigt. Weitere wurde das Letzte version des Spielbaren Charakters implmentiert. Aufgrund von zeitlichen gründen hat dieser keine Animation bekommen.  
+\begin{minipage}[t]{0.5\textwidth}
+  Diese Konzeptzeichnung der Gegner diente als Vorlage für die Enemy Game-Objekte
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/04/images/V3/steve.jpg}
+    \caption{Konzeptzeichnung des Gegners}
+  \end{figure}
+\end{minipage}
+
+\pagebreak
+
+\subsubsection{Level 2}
+\begin{figure}[h]
+  \centering
+  \includegraphics*[width=0.6\textwidth]{chapters/04/images/V3/Level2.png}
+  \caption{}
+  \label{fig:PE09}
+\end{figure}
+
+Die Überlegung für das zweite Level war es, anschließend zu dem Portal im ersten Level ein höhlen Level zu machen. In der obigen Abbildung sieht man den Ansatz des Leveldesigns. Der Boden soll Lava darstellen und das komplette Level soll innerhalb eines großen Quaders sein. Diesem müsste nur die Höhlenform ausgeschitten werden. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{chapters/04/images/V3/Level2Game.png}
+  \caption{}
+  \label{fig:PE13}
+\end{figure}
+
+%In der finalen Version, wurde der Entschluss gefasst das die Map nochmal in Blender erstellt wird. Der Grund für diesen Schritt, dass in Blender die Tools ausgereifter für eine Level erstellung sind. Somit wirkt die Map schöner und perfomanter. Zudem gibt es schon Ansätze für das zweite Level. Aufgrund von zeitlichen Gründen haben wir es nicht geschafft das zweite Level fertig zustellen. In der letzten version wurde eine Animation für die Münzen erstellt. Die Münzen rotieren um ihre eigenen Achse herum sobald das Spiel startet. Das hat den zweck das Spiel lebhafter zu wirken. Zu dem wurde die Funtkion erstellt, das Münzen eingesammelt werden können. Die eingesammelten Münzen werden dann auf den oberen linken Eck des Bildschirms angezeigt. Weitere wurde das Letzte version des Spielbaren Charakters implmentiert. Aufgrund von zeitlichen gründen hat dieser keine Animation bekommen.  
 
 
 \pagebreak

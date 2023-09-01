@@ -35,27 +35,28 @@ Der Code für den Player unterteilt sich in zwei verschiedene Scripte. Einerseit
 \subsection{Player Klasse}
 % C#
 \begin{lstlisting}[language=CSharp,caption={Player Klasse.},label=code:player]
-    public class Player : MonoBehaviour
-    {
-        public int maxHealth = 100;
-        public int currentHealth;
-        public Healthbar healthbar;
-        
-        void Start()
-        {
-            currentHealth = maxHealth;
-            healthbar.SetMaxHealth(maxHealth);
-        }
-        public void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
-            healthbar.SetHealth(currentHealth);
+public class Player : MonoBehaviour{
+    private void Start(){
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
+        damageOverlay.gameObject.SetActive(false);
+        gameOverScreen.SetActive(false);
+    }
+
+    public void TakeDamage(int damage){
+        ShowDamageOverlay();
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
+        if (currentHealth <= 0){
+            Time.timeScale = 0f;
+            gameOverScreen.SetActive(true);
         }
     }
+}
 \end{lstlisting}
 
-Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. 
-
+Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem Aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. Außerdem wird mit einer Coroutine kurzzeitig das DamageOverlay angezeigt. Falls der Spieler keine Lebenspunkte mehr hat, wird der GameOverScreen angezeigt.
+%todo: coroutine gls
 \pagebreak
 \subsection{PlayerMovement Klasse}
 Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. Der Code der dem Spieler es Ermöglicht sich zu bewegen und die Funktion für das Springen.\\
@@ -97,81 +98,155 @@ Bei dem Code für das Springen muss zuerst geschaut werden, ob der Player auf de
 \pagebreak
 \section{Enemy Script}
 
+Bei dem Enemy Skript wurde, anstatt eines einfachen \verb+Waypointfollower+ wie es bei den beweglichen Plattformen der Fall ist, Unitys eingebauter AI verwendet. Damit dieser funktioniert benötigt die Scene zwei Komponenten. Ein NavMesh für die Plattform auf der sich der Gegner bewegen soll und einen NavMeshAgent für das Game-Objekt des Gegners.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapters/05/images/NavMesh.png}
+        \caption{Das Nav Mesh in dem ersten Level des Prototypen.}
+        \label{fig:SD01}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapters/05/images/Agent.png}
+        \caption{Der Agent für der Gegner.}
+        \label{fig:PE0SD022}
+    \end{minipage}
+\end{figure}
+
+In der linken Abbildung ist das Nav Mesh in Blau zu sehen. Dieses wird automatisch erstellt, wenn die Grundplattform ausgewählt wird und wie in der rechten Abbildung ein Agent erstellt wird. Bei dem dritten Tab kann das NavMesh \glqq baked\grqq \space werden. Die eingegebenen Zahlen bie dem Agent entscheiden die Oberflächen, über welche der NavMeshAgent sich hinfortbewegen kann. In dem fall des ersten Levels wurden diese so eingestellt, dass der Agent vor und nach dem Abgrund eine größere Fläche hat um sich zu bewegen. 
+
+
+\pagebreak
+\subsection{Der Code des Enemy Skripts}
 % C#
-\begin{lstlisting}[language=CSharp,caption={EnemyController},label=code:]
+\begin{lstlisting}[language=CSharp,caption={EnemyController},label=code:enemyController]
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private Transform movePositionTransform;
+
+    private NavMeshAgent navMeshAgent;
+
+    private void Awake()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+    
     private void Update()
     {
-        //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if(playerInSightRange && playerInAttackRange) AttackPlayer();
-    }
-
-    private void Patroling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-    }
-
-    private void SearchWalkPoint()
-    {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
-    }
-
-    private void ChasePlayer()
-    {
-        agent.SetDestination(player.position);
-    }
-
-    private void AttackPlayer()
-    {
-        //Make sure enemy doesnt move
-        agent.SetDestination(transform.position);
-        
-        transform.LookAt(player);
-
-        if (!alreadyAttacked)
-        {
-            //Attack code
-            Debug.Log("Attacking...");
-            // Call the TakeDamage method from the Player script
-            playerScript.TakeDamage(damageAmount);
-
-
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
-    }
-
-    private void ResetAttack()
-    {
-        alreadyAttacked = false;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
+        navMeshAgent.destination = movePositionTransform.position;
+        Vector3 targetPostition = new Vector3( movePositionTransform.position.x, 
+            this.transform.position.y, 
+            movePositionTransform.position.z ) ;
+        this.transform.LookAt( targetPostition ) ;
     }
 }
 \end{lstlisting}
+
+\emph{\glqq Die NavMesh-Agentenkomponente verwaltet sowohl die Pfadfindung als auch die Bewegungssteuerung eines Spiel-Objekts. In den Skripten muss für eine einfache Navigation nur der gewünschte Zielpunkt festgelegt werden - der NavMesh-Agent kann alles Weitere von dort aus übernehemn.\grqq}~\cite[Unity NavMesh Dokumentation]{unitydocNavmesh} \\
+
+Der EnemyController importiert den NavMeshAgent und eine Transform die als Ziel dient. Der für den Prototypen ausgewählte Zielpunkt ist der Player. Die Gegner werden dann automatisch Hindernissen ausweichen und versuchen an den Spieler heranzukommen. 
+
+\pagebreak
+
+\subsection{Die Deathzone}
+Eine \gls{deathzone}\footnote[1]{\glsentrydesc{deathzone}} ist in der Videospiel Branche sehr bekannt. Unter Developern aber auch unter Spielern. Ohne einer Todeszone kann es leicht passieren, dass der Spieler aus der Map ins unendliche fällt. Zusätzlich kann mit dieser Restriktion verhindert werden das der Player über Wände klettert und damit Teile des Levels überspringt.\\
+
+\begin{lstlisting}[language=CSharp,caption={DeathZone},label=code:deathzone]
+public class DeathZone : MonoBehaviour
+{
+    public Player player;
+    public int damageAmount;
+
+    private Vector3 spawnPoint = new Vector3(9, -42, 168);
+    void OnTriggerExit(Collider other)
+    {
+        other.transform.position = spawnPoint;
+        player.TakeDamage(damageAmount);
+    }
+}
+\end{lstlisting}
+
+Die \verb+DeathZone+ Klasse benötigt nur das Game-Objekt des Spielers und eine Anzahl an Schaden. Wie unterhalb in der Abbildung gezeigt wird, ist die Deathzone des Prototypen ein Quader. Dieser umfässt das komplette Level. Wenn der Player diese Zone verlässt, dann wird in \verb+OnTriggerExit+ das Game-Objekt wieder zurück an die Spawn Position gesetzt und dem Player wird Schaden hinzugefügt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapters/05/images/DeathZone.png}
+    \caption{Die DeathZone in dem Prototypen.}
+    \label{SD02}
+\end{figure}
+\pagebreak
+
+
+\subsection{WayPointFollower Skript}
+
+\begin{lstlisting}[language=CSharp,caption={FixedUpdate der WayPointFollower Klasse.},label=code:mainmenu]
+public class WaypointFollower : MonoBehaviour
+{
+  GameObject[] waypoints;
+  int direction = 1; // 1 for forward, -1 for backward
+
+  void FixedUpdate()
+  {
+      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
+      {
+          currentWaypointIndex += direction;
+
+          if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
+          {
+              direction *= -1; // Reverse the direction when reaching the end or start
+              currentWaypointIndex += direction * 2; // Move two steps in the opposite direction
+          }
+      }
+
+      transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
+  }
+}
+\end{lstlisting}
+
+In dem oben abgebildeten Listing 6.1 ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObject Array gespeichert. Mittels dem Index\footnote[1]{Index ist eine Stelle in einem Array.} und der \verb+direction+ Variable wird durch dieses Array durchiteriert\footnote[2]{Iterieren ist der Prozess des durchlaufen einer Sammlung von Daten.}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
+
+
+\pagebreak
+
+\subsection{StickyPlatform Skript}
+
+\begin{lstlisting}[language=CSharp,caption={StickyPlatform Klasse.},label=code:mainmenu]
+  public class StickyPlatform : MonoBehaviour
+  {
+      public string playerTag = "Player";
+  
+      private void OnCollisionEnter(Collision collision)
+      {
+          // Check if the colliding object has the specified tag.
+          if (collision.gameObject.CompareTag(playerTag))
+          {
+              // Reset the player's velocity to prevent unexpected behavior.
+              Rigidbody playerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+              if (playerRigidbody != null)
+              {
+                  playerRigidbody.velocity = Vector3.zero;
+              }
+  
+              // Set the platform as the parent of the player's transform.
+              collision.gameObject.transform.SetParent(transform);
+          }
+      }
+  
+      private void OnCollisionExit(Collision collision)
+      {
+          if (collision.gameObject.CompareTag(playerTag))
+          {
+              // When the player exits the collision, remove the parent relationship.
+              collision.gameObject.transform.SetParent(null);
+          }
+      }
+  }
+\end{lstlisting}
+
+In dem Listing 6.2 ist ein Ausschnitt des Codes von der StickyPlatform Klasse zu sehen. Der geniale Trick der in dieser Klasse verwendet wird ist, dass der \verb+Player+ zu einem \verb+Child+ von der beweglichen Plattform gemacht wird. Das bewirkt, dass die Plattform \glqq sticky\grqq \space ist. Also bewegt sich der Spieler, solange er sich auf dieser Plattform befindet, relativ zu der Plattform.
+
+\pagebreak
