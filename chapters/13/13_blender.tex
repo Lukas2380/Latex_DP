@@ -3,11 +3,11 @@
 \chapter{Blender}
 
 \subsection{Einführung}
-Blender ist ein umfangreiches Programm für die Erstellung von 3D-Objekten. Diese Software kann man auch zum Animieren, Zeichnen, Video Editing oder Ähnlichem nutzen. 
+Blender ist ein umfangreiches Programm für die Erstellung von 3D-Objekten. Diese Software kann man auch zum Animieren, Zeichnen, Video Editen oder Ähnlichem benutzen. 
 In dieser Diplomarbeit wird der Fokus auf den 3D-Viewport und auf die Animation gesetzt. Das sind die wichtigsten Funktionen für die weiter Bearbeitung in Unity. 
 
 \subsection{3D-Viewport}
-Im 3D Viewport kann man das 3D-Objekt bearbeiten. Dazu gibt dir die Software folgende Tools: 
+Im 3D Viewport kann man das 3D-Objekt bearbeiten. Dazu gibt \hl{dir} die Software folgende Tools: 
 
 \begin{itemize}
     \item \textbf{Objekt Mode}:
@@ -31,7 +31,7 @@ Im 3D Viewport kann man das 3D-Objekt bearbeiten. Dazu gibt dir die Software fol
 Im Objekt Mode können die Objekte verändert werden.
 Dabei kann man, die Größe, die Länge und die Breite geändert werden.
 Außerdem kann das Objekt rotiert und die Position im 3-dimensionalen Raum verändert werden. 
-Es können zudem Weitere Objekte hinzugefügt werden.
+Es können zudem weitere Objekte hinzugefügt werden.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/3D-Viewport.png}
@@ -47,7 +47,7 @@ Diese Tools sind:
 
 \begin{itemize}
     \item \textbf{Extrudieren}:
-    \indent Das Extrudieren verwendet werden, um eine Fläche höher oder tiefer zu ziehen und somit als neuer Würfel zu dem Objekt hinzuzufügen.
+    \indent \hl{Das Extrudieren verwendet werden}, um eine Fläche höher oder tiefer zu ziehen und somit als neuer Würfel zu dem Objekt hinzuzufügen.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/ExtrudeTool.png}
@@ -69,7 +69,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/Loopcut.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Lopcut Tools.}
+        \caption{In dieser Abbildung sieht man die Anwendung des Loopcut Tools.}
         \label{UST-11}
     \end{figure}
     \item \textbf{Messer}:
@@ -92,19 +92,19 @@ Diese Tools sind:
 %https://docs.blender.org/manual/en/latest/editors/3dview/modes.html
 
 \subsection{Sculping Mode}
-Der Sculping Mode hat verschiedene Tools um das Obejekt dynamisch zu verändern. In diesem Tool kann die \bettergls{topology}{1} bearbeitet werden. Hier kann die Anzahl der Polygone wie im Edit Mode dynamisch verändert werden. Die Arbeitsweise in diesem Tool ist wie folgt.\\\\
-Zuerst werden grobe Details des Obejekt erzeugt wie Zum Beispiel die Grundform des Obejekt.\\\\
+Der Sculping Mode hat verschiedene Tools um das Objekt dynamisch zu verändern. In diesem Tool kann die \bettergls{topology}{1} bearbeitet werden. Hier kann die Anzahl der Polygone wie im Edit Mode dynamisch verändert werden. Die Arbeitsweise in diesem Tool ist wie folgt.\\\\
+Zuerst werden grobe Details des Objekt erzeugt wie zum Beispiel die Grundform des Objekt.\\\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett.png}
     \caption{In dieser Abbildung zeigt die Bearbeitung der Grundform eines Spielobjekts.}
     \label{UST-14}
 \end{figure}
-\noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow dient dazu so immer auf einer Detailstufe zu bleiben.
+\noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow \hl{vl gls?} dient dazu so immer auf einer Detailstufe zu bleiben.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett1.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung gröberer Details mit einer höheren Polygon anzahl.}
+    \caption{In dieser Abbildung zeigt die Bearbeitung gröberer Details mit einer höheren Polygonanzahl.}
     \label{UST-15}
 \end{figure}
 \noindent Dieser Ablauf wird 2 bis 3 mal wiederholt um ein schönes detailiertes Objekt zu erstellen.
@@ -114,11 +114,11 @@ Zuerst werden grobe Details des Obejekt erzeugt wie Zum Beispiel die Grundform d
     \caption{In dieser Abbildung zeigt die Bearbeitung feinere Details auf das Objekt.}
     \label{UST-16}
 \end{figure}
-\noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss berechnet werden. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser ist Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden. Um das zu gewehrleisten werden bestimmte Flächen wo keine Details exestieren runter Skaliert. in der Folgenden Abbildung kann man erkennen das in Orange die Fläche ist die keine Details besitzt und somit runterskaliert wurde.
+\noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss die Cpu rechnen. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden. \hl{Um das zu gewährleisten werden bestimmte Flächen wo keine Details exestieren runter Skaliert.} In der Folgenden Abbildung kann man erkennen, \hl{dass in Orange die Fläche ist die keine Details besitzt und somit runterskaliert wurde}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett3.png}
-    \caption{In dieser Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}
+    \caption{\hl{In dieser Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}}
     \label{UST-17}
 \end{figure}
