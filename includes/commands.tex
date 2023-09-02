@@ -29,3 +29,7 @@
 
 % Default page style without the footer
 \pagestyle{empty}
+
+\newcommand{\bettergls}[2]{%
+  \gls{#1}\footnote[#2]{\glsentrydesc{#1}}%
+}

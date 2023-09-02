@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside, numbers=noenddot]{scrbook}
+\documentclass[german, 12pt, oneside, numbers=noenddot]{scrbook}
 \input{./includes/htl_definintions.tex}	
 
 \usepackage[onehalfspacing]{setspace}
@@ -19,16 +19,18 @@
 % highlighting
 \usepackage{xcolor, soul}
 
+% german
+%\usepackage[ngerman]{babel}
 
 % ende
 \input{includes/commands.tex}
 
-\usepackage{glossaries}
+\usepackage[sort=use]{glossaries}
 \makenoidxglossaries
 \input{includes/glossaryEntries.tex}
 %\glsaddallunused % if glossar is acting up
 
-\usepackage[defernumbers=true]{biblatex}
+\usepackage[ natbib=true, style=numeric,sorting=none]{biblatex}
 \addbibresource{media/literatur.bib}
 
 % Initialen der Autoren
@@ -48,6 +50,9 @@
 %\setlength{\headheight}{23.5071pt}
 \setlength{\headheight}{23.7771pt}
 \addtolength{\topmargin}{-6.5071pt}
+
+% noindent %todo: remove if noindent doesnt work
+\setlength\parindent{0pt}
 
 \begin{document}
 \setauthorname{}
@@ -70,16 +75,18 @@
 \input{./chapters/02/02_umfeldanalyse_schachinger.tex}
 \input{./chapters/02/02_umfeldanalyse_usta.tex}
 
+%good till here;
+\input{./chapters/14/14_unity.tex}
+\input{./chapters/13/13_blender.tex}
+
+\input{./chapters/11/11_spieleperformance.tex}
+\input{./chapters/12/12_spieldesign.tex}
+\input{./chapters/15/15_storyandtheme.tex}
+
 \input{./chapters/03/03_UserInterface.tex}
 \input{./chapters/04/PrototypEntwicklung.tex}
 
 \input{./chapters/05/ScriptsDescription.tex}
-
-\input{./chapters/11/11_spieleperformance.tex}
-\input{./chapters/12/12_spieldesign.tex}
-\input{./chapters/13/13_blender.tex}
-\input{./chapters/14/14_unity.tex}
-\input{./chapters/15/15_storyandtheme.tex}
 
 \input{./chapters/16/summary.tex}
 

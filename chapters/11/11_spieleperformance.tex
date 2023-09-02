@@ -8,8 +8,8 @@
 In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spielentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert.Bei der Spieleentwicklung kann man die Performance anhand von zwei Faktoren optimieren. Ein Faktor betrifft dabei die Spiel-Engine, während der andere Faktor das Modellierungsprogramm betrifft.. %todo: fix text grammar
 
 \subsection{Spielobjekt Optimierung im Grafikprogramm}
-Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. Denn sobald sich ein Polygon in der Darstellungsdistanz befindet, wird es berechnet. Um die Anzahl der Polygone niedrig zu halten, werden die Details als "Objekt-Images" gezeichnet. \\\\ %todo: change the ****
-Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten wir die meisten Objekte in unseren Prototypen neu bearbeiten. Dieser Vorgang wird auch als 'Mapping' bezeichnet. %todo: fix the ""
+Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zumachen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygon Anzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein das die Performance im Spiel darunter leidet. Denn sobald sich ein Polygon in der Darstellungsdistanz befindet, wird es berechnet. Um die Anzahl der Polygone niedrig zu halten, werden die Details als \glqq Objekt-Images \grqq \space gezeichnet. \\\\ %todo: change the ****
+Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten wir die meisten Objekte in unseren Prototypen neu bearbeiten. Dieser Vorgang wird auch als 'Mapping' bezeichnet.
 \pagebreak
 \subsection{Objekt Mapping}
 
@@ -24,7 +24,7 @@ In der nächsten Abbildung wird auf der linken Seite eine \verb+unwrapped+ Map v
     \label{htl01}
 \end{figure}
 
-\noindent Nun könnte man ein Bild unter das entfaltete Mapping legen und damit weiterarbeiten. Auf diesem Bild können nun sämtliche Details eingezeichnet werden. Sobald die Details eingezeichnet wurden, wird das Bild "gebacken". Im folgenden Bild sieht man das Objektbild eines Steins: %todo: maybe rewrite this
+\noindent Nun könnte man ein Bild unter das entfaltete Mapping legen und damit weiterarbeiten. Auf diesem Bild können nun sämtliche Details eingezeichnet werden. Sobald die Details eingezeichnet wurden, wird das Bild \glqq gebacken \grqq. Im folgenden Bild sieht man das Objektbild eines Steins: %todo: maybe rewrite this
 
 \begin{figure}[H]
     \centering
@@ -63,7 +63,7 @@ Um das Objekt in Unity zu implementieren, werden alle Maps in Unity gebraucht. E
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{chapters/11/Images/Koordinaten.png}
-    \caption{Eine Abbildung unterschiedlicher Programme und deren Koordinatensystemen}
+    \caption{Eine Abbildung unterschiedlicher Programme und deren Koordinatensystemen.}
     \label{htl01}
 \end{figure}
 

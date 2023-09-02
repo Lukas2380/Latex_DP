@@ -1,9 +1,9 @@
 \pagebreak
-\chapter{Scripte}
-In diesem Kapitel werden die Scripte des Spieles als Code Blöcke dargestellt und erklärt. 
+\chapter{Skripte}
+In diesem Kapitel werden die Skripte des Spieles als Code Blöcke dargestellt und erklärt. 
 
-\section{Münzen Script}
-Das Münzen Script ist dafür verantwortlich, dass die Münzen einsammelbar sind. 
+\section{Münzen Skript}
+Das Münzen Skript ist dafür verantwortlich, dass die Münzen einsammelbar sind. 
 % C#
 \begin{lstlisting}[language=CSharp,caption={Coin Klasse.},label=code:coin]
     public class Coin : MonoBehaviour
@@ -29,8 +29,8 @@ Die Funktion der \verb+Coin+ Klasse ist sehr simpel. Zuerst wird geschaut ob es 
 
 
 \pagebreak
-\section{Player Scripte}
-Der Code für den Player unterteilt sich in zwei verschiedene Scripte. Einerseits gibt es die \verb+Player+ Klasse die für die Lebenspunkte des Spielers verantwortlich ist. Andererseits gibt es das \verb+PlayerMovement+ Script, welches für die Kontrolle über den Charakter verantwortlich ist. \\
+\section{Player Skripte}
+Der Code für den Player unterteilt sich in zwei verschiedene Skripte. Einerseits gibt es die \verb+Player+ Klasse die für die Lebenspunkte des Spielers verantwortlich ist. Andererseits gibt es das \verb+PlayerMovement+ Skript, welches für die Kontrolle über den Charakter verantwortlich ist. \\
 
 \subsection{Player Klasse}
 % C#
@@ -55,14 +55,15 @@ public class Player : MonoBehaviour{
 }
 \end{lstlisting}
 
-Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem Aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. Außerdem wird mit einer Coroutine kurzzeitig das DamageOverlay angezeigt. Falls der Spieler keine Lebenspunkte mehr hat, wird der GameOverScreen angezeigt.
-%todo: coroutine gls
+Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem Aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. Außerdem wird mit einer \bettergls{coroutine}{1} kurzzeitig das DamageOverlay angezeigt. Falls der Spieler keine Lebenspunkte mehr hat, wird der GameOverScreen angezeigt.
+
 \pagebreak
+
 \subsection{PlayerMovement Klasse}
 Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. Der Code der dem Spieler es Ermöglicht sich zu bewegen und die Funktion für das Springen.\\
 
 % C#
-\begin{lstlisting}[language=CSharp,caption={CharacterMovement},label=code:charactermovement]
+\begin{lstlisting}[language=CSharp,caption={CharacterMovement der PlayerMovement Klasse.},label=code:charactermovement]
     void CharacterMovement() {
         rotation.y += Input.GetAxis("Mouse X");
         transform.eulerAngles = (Vector2)rotation * 3f;
@@ -76,7 +77,7 @@ Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. De
     }
 \end{lstlisting}
 
-Es gibt zwei Wege wie das Bewegen der Spielfigur gehandhabt werden kann. Entweder ist die Bewegung statisch, oder sie ist dynamisch wie es in dem Listing 7.3 dargestellt ist. Die Methode nimmt die horizontale Bewegung der Maus und berechnet sich in welche Richtung sich der Charakter bewegen muss.\\
+Es gibt zwei Wege wie das Bewegen der Spielfigur gehandhabt werden kann. Entweder ist die Bewegung statisch, oder sie ist dynamisch wie es in dem Listing oberhalb dargestellt ist. Die Methode nimmt die horizontale Bewegung der Maus und berechnet sich in welche Richtung sich der Charakter bewegen muss.\\
 
 % C#
 \begin{lstlisting}[language=CSharp,caption={Jump \& DoubleJump der PlayerMovement Klasse.},label=code:player]
@@ -96,7 +97,7 @@ Es gibt zwei Wege wie das Bewegen der Spielfigur gehandhabt werden kann. Entwede
 Bei dem Code für das Springen muss zuerst geschaut werden, ob der Player auf dem Boden steht. Sobald dann die Springen-Taste gedrückt wird, wird dem Rigidbody des Charakters eine \verb+Force+ also eine vertikale Kraft nach oben addiert. Die Funktion wird bei dem zweiten Drücken der Sprung-Taste in der Luft ausgeführt.
 
 \pagebreak
-\section{Enemy Script}
+\section{Enemy Skript}
 
 Bei dem Enemy Skript wurde, anstatt eines einfachen \verb+Waypointfollower+ wie es bei den beweglichen Plattformen der Fall ist, Unitys eingebauter AI verwendet. Damit dieser funktioniert benötigt die Scene zwei Komponenten. Ein NavMesh für die Plattform auf der sich der Gegner bewegen soll und einen NavMeshAgent für das Game-Objekt des Gegners.
 
@@ -123,7 +124,7 @@ In der linken Abbildung ist das Nav Mesh in Blau zu sehen. Dieses wird automatis
 \pagebreak
 \subsection{Der Code des Enemy Skripts}
 % C#
-\begin{lstlisting}[language=CSharp,caption={EnemyController},label=code:enemyController]
+\begin{lstlisting}[language=CSharp,caption={EnemyController Klasse.},label=code:enemyController]
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
@@ -153,9 +154,9 @@ Der EnemyController importiert den NavMeshAgent und eine Transform die als Ziel 
 \pagebreak
 
 \subsection{Die Deathzone}
-Eine \gls{deathzone}\footnote[1]{\glsentrydesc{deathzone}} ist in der Videospiel Branche sehr bekannt. Unter Developern aber auch unter Spielern. Ohne einer Todeszone kann es leicht passieren, dass der Spieler aus der Map ins unendliche fällt. Zusätzlich kann mit dieser Restriktion verhindert werden das der Player über Wände klettert und damit Teile des Levels überspringt.\\
+Eine \bettergls{deathzone}{1} ist in der Videospiel Branche sehr bekannt. Unter Developern aber auch unter Spielern. Ohne einer Todeszone kann es leicht passieren, dass der Spieler aus der Map ins unendliche fällt. Zusätzlich kann mit dieser Restriktion verhindert werden das der Player über Wände klettert und damit Teile des Levels überspringt.\\
 
-\begin{lstlisting}[language=CSharp,caption={DeathZone},label=code:deathzone]
+\begin{lstlisting}[language=CSharp,caption={DeathZone Klasse},label=code:deathzone]
 public class DeathZone : MonoBehaviour
 {
     public Player player;
@@ -170,7 +171,7 @@ public class DeathZone : MonoBehaviour
 }
 \end{lstlisting}
 
-Die \verb+DeathZone+ Klasse benötigt nur das Game-Objekt des Spielers und eine Anzahl an Schaden. Wie unterhalb in der Abbildung gezeigt wird, ist die Deathzone des Prototypen ein Quader. Dieser umfässt das komplette Level. Wenn der Player diese Zone verlässt, dann wird in \verb+OnTriggerExit+ das Game-Objekt wieder zurück an die Spawn Position gesetzt und dem Player wird Schaden hinzugefügt.
+Die \verb+DeathZone+ Klasse benötigt nur das Game-Objekt des Spielers und eine Anzahl an Schaden. Wie in der Abbildung \ref{SD02} gezeigt wird, ist die Deathzone des Prototypen ein Quader. Dieser umfässt das komplette Level. Wenn der Player diese Zone verlässt, dann wird in \verb+OnTriggerExit+ das Game-Objekt wieder zurück an die Spawn Position gesetzt und dem Player wird Schaden hinzugefügt.
 
 \begin{figure}[H]
     \centering
@@ -207,7 +208,7 @@ public class WaypointFollower : MonoBehaviour
 }
 \end{lstlisting}
 
-In dem oben abgebildeten Listing 6.1 ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObject Array gespeichert. Mittels dem Index\footnote[1]{Index ist eine Stelle in einem Array.} und der \verb+direction+ Variable wird durch dieses Array durchiteriert\footnote[2]{Iterieren ist der Prozess des durchlaufen einer Sammlung von Daten.}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
+In dem oberhalb abgebildeten Listing ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObjekt Array gespeichert. Mittels dem \bettergls{index}{1} und der \verb+direction+ Variable wird durch dieses Array durch-\bettergls{iteriert}{2}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
 
 
 \pagebreak
@@ -247,6 +248,6 @@ In dem oben abgebildeten Listing 6.1 ist ein Ausschnitt der \verb+WayPointFollow
   }
 \end{lstlisting}
 
-In dem Listing 6.2 ist ein Ausschnitt des Codes von der StickyPlatform Klasse zu sehen. Der geniale Trick der in dieser Klasse verwendet wird ist, dass der \verb+Player+ zu einem \verb+Child+ von der beweglichen Plattform gemacht wird. Das bewirkt, dass die Plattform \glqq sticky\grqq \space ist. Also bewegt sich der Spieler, solange er sich auf dieser Plattform befindet, relativ zu der Plattform.
+In dem Listing 6.2 ist ein Ausschnitt des Codes von der StickyPlatform Klasse zu sehen. Der geniale Trick, der in dieser Klasse verwendet wird ist, dass der \verb+Player+ zu einem \verb+Child+ von der beweglichen Plattform gemacht wird. Das bewirkt, dass die Plattform \glqq sticky\grqq \space ist. Also bewegt sich der Spieler, solange er sich auf dieser Plattform befindet, relativ zu der Plattform.
 
 \pagebreak

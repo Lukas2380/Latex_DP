@@ -35,7 +35,7 @@ Es können zudem Weitere Objekte hinzugefügt werden.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/3D-Viewport.png}
-    \caption{In dieser Abbildung sind man den Objekt Mode von Blender}
+    \caption{In dieser Abbildung sind man den Objekt Mode von Blender.}
     \label{UST-8}
 \end{figure}
 
@@ -69,7 +69,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/Loopcut.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Lopcut Tools}
+        \caption{In dieser Abbildung sieht man die Anwendung des Lopcut Tools.}
         \label{UST-11}
     \end{figure}
     \item \textbf{Messer}:
@@ -77,7 +77,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/KniveTool.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Knive Tools}
+        \caption{In dieser Abbildung sieht man die Anwendung des Knive Tools.}
         \label{UST-12}
     \end{figure}
     \item \textbf{Poly Builder}: 
@@ -85,33 +85,33 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/PolyBuild.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Poly Build Tools}
+        \caption{In dieser Abbildung sieht man die Anwendung des Poly Build Tools.}
         \label{UST-13}
     \end{figure}
 \end{itemize}
 %https://docs.blender.org/manual/en/latest/editors/3dview/modes.html
 
 \subsection{Sculping Mode}
-Der Sculping Mode hat verschiedene Tools um das Obejekt dynamisch zu verändern. In diesem Tool kann die Topology\footnote[1]{Der Polygonaufbau des Objekts} bearbeitet werden. Hier kann die Anzahl der Polygone wie im Edit Mode dynamisch verändert werden. Die Arbeitsweise in diesem Tool ist wie folgt.\\\\
+Der Sculping Mode hat verschiedene Tools um das Obejekt dynamisch zu verändern. In diesem Tool kann die \bettergls{topology}{1} bearbeitet werden. Hier kann die Anzahl der Polygone wie im Edit Mode dynamisch verändert werden. Die Arbeitsweise in diesem Tool ist wie folgt.\\\\
 Zuerst werden grobe Details des Obejekt erzeugt wie Zum Beispiel die Grundform des Obejekt.\\\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung der Grundform eines Spielobjekts}
+    \caption{In dieser Abbildung zeigt die Bearbeitung der Grundform eines Spielobjekts.}
     \label{UST-14}
 \end{figure}
 \noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow dient dazu so immer auf einer Detailstufe zu bleiben.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett1.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung gröberer Details mit einer höheren Polygon anzahl}
+    \caption{In dieser Abbildung zeigt die Bearbeitung gröberer Details mit einer höheren Polygon anzahl.}
     \label{UST-15}
 \end{figure}
 \noindent Dieser Ablauf wird 2 bis 3 mal wiederholt um ein schönes detailiertes Objekt zu erstellen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett2.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung feinere Details auf das Objekt}
+    \caption{In dieser Abbildung zeigt die Bearbeitung feinere Details auf das Objekt.}
     \label{UST-16}
 \end{figure}
 \noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss berechnet werden. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser ist Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden. Um das zu gewehrleisten werden bestimmte Flächen wo keine Details exestieren runter Skaliert. in der Folgenden Abbildung kann man erkennen das in Orange die Fläche ist die keine Details besitzt und somit runterskaliert wurde.
@@ -119,6 +119,6 @@ Zuerst werden grobe Details des Obejekt erzeugt wie Zum Beispiel die Grundform d
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett3.png}
-    \caption{In dieser Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt}
+    \caption{In dieser Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}
     \label{UST-17}
 \end{figure}
