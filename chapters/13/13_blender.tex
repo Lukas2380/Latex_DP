@@ -7,7 +7,7 @@ Blender ist ein umfangreiches Programm für die Erstellung von 3D-Objekten. Dies
 In dieser Diplomarbeit wird der Fokus auf den 3D-Viewport und auf die Animation gesetzt. Das sind die wichtigsten Funktionen für die weiter Bearbeitung in Unity. 
 
 \subsection{3D-Viewport}
-Im 3D Viewport kann man das 3D-Objekt bearbeiten. Dazu gibt \hl{dir} die Software folgende Tools: 
+Im 3D Viewport kann man das 3D-Objekt bearbeiten. Für diese Bearbeitung hat die Software folgende Tools: 
 
 \begin{itemize}
     \item \textbf{Objekt Mode}:
@@ -47,7 +47,7 @@ Diese Tools sind:
 
 \begin{itemize}
     \item \textbf{Extrudieren}:
-    \indent \hl{Das Extrudieren verwendet werden}, um eine Fläche höher oder tiefer zu ziehen und somit als neuer Würfel zu dem Objekt hinzuzufügen.
+    \indent Das Extrudieren wird verwendet , um eine Fläche höher oder tiefer zu ziehen und somit als neuer Würfel zu dem Objekt hinzuzufügen.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/ExtrudeTool.png}
@@ -100,7 +100,7 @@ Zuerst werden grobe Details des Objekt erzeugt wie zum Beispiel die Grundform de
     \caption{In dieser Abbildung zeigt die Bearbeitung der Grundform eines Spielobjekts.}
     \label{UST-14}
 \end{figure}
-\noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow \hl{vl gls?} dient dazu so immer auf einer Detailstufe zu bleiben.
+\noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow dient dazu so immer auf einer Detailstufe zu bleiben.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett1.png}
@@ -114,11 +114,11 @@ Zuerst werden grobe Details des Objekt erzeugt wie zum Beispiel die Grundform de
     \caption{In dieser Abbildung zeigt die Bearbeitung feinere Details auf das Objekt.}
     \label{UST-16}
 \end{figure}
-\noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss die Cpu rechnen. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden. \hl{Um das zu gewährleisten werden bestimmte Flächen wo keine Details exestieren runter Skaliert.} In der Folgenden Abbildung kann man erkennen, \hl{dass in Orange die Fläche ist die keine Details besitzt und somit runterskaliert wurde}.
+\noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss die Cpu rechnen. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden.Um das zu gewährleisten, werden Bereiche des Obejekt runter skaliert. In der Folgenden Abbildung kann man erkennen, dass die orange Fläche keine Details enthält und somit runterskaliert wurde.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett3.png}
-    \caption{\hl{In dieser Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}}
+    \caption{Diese Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}
     \label{UST-17}
 \end{figure}
