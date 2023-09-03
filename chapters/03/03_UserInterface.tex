@@ -169,6 +169,20 @@ Die Idee war es die Steuerung auf dem User Interface darzustellen. Das ist ein e
 %todo: level2 ui übergabe von wert... 67
 
 \section{UI des zweiten Levels}
+Das User Interface des zweiten Levels besteht aus einem Canvas mit UI Elementen und einer statischen Kamera von dem zweiten Level. 
+
+In den nächsten zwei Listings wird erkenntlich gemacht, wie die Anzahl der Münzen zwischen den Scenen übergeben wird. Mithilfe des \verb+PlayerPrefs+ ist es möglich scenenübergreifend Werte in Variablen zu Speichern. 
+% C#
+\begin{lstlisting}[language=CSharp,caption={Portal Klasse.},label=code:portal]
+    PlayerPrefs.SetString("HighScore", coinCounterText.text);
+\end{lstlisting}
+
+% C#
+\begin{lstlisting}[language=CSharp, caption{GameManager Klasse.}, label=code:gamemanager]
+    Score = PlayerPrefs.GetString("HighScore");
+    scoreText.text = Score;
+\end{lstlisting}
+
 
 \begin{figure}[h]
     \centering
