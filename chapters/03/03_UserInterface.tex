@@ -166,8 +166,6 @@ In dem Prototypen wird die Lebensanzeige als roter Balken neben einem Herz darge
 \subsection{Steuerung (3)}
 Die Idee war es die Steuerung auf dem User Interface darzustellen. Das ist ein einfacher Weg, das Spielkonzept dem Spieler näherzubringen. Ein gutes Beispiel dafür ist die Startwelt von Super Mario Odyssey. Dieses Spiel war auch eine große Inspiration für den Prototypen. 
 
-%todo: level2 ui übergabe von wert... 67
-
 \section{UI des zweiten Levels}
 Das User Interface des zweiten Levels besteht aus einem Canvas mit UI Elementen und einer statischen Kamera von dem zweiten Level. 
 
@@ -178,7 +176,7 @@ In den nächsten zwei Listings wird erkenntlich gemacht, wie die Anzahl der Mün
 \end{lstlisting}
 
 % C#
-\begin{lstlisting}[language=CSharp, caption{GameManager Klasse.}, label=code:gamemanager]
+\begin{lstlisting}[language=CSharp,caption={GameManager Klasse.},label=code:gamemanager]
     Score = PlayerPrefs.GetString("HighScore");
     scoreText.text = Score;
 \end{lstlisting}
