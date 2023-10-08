@@ -5,15 +5,15 @@
 \section{Einführung}
 Unity (auch bekannt als Unity3D) ist eine Game Engine und \bettergls{ide}{1} zum kreieren von Interaktionsmedien, meißt Video Spielen. \Cite[][A history of the unity game engine]{haas2014history} \\
 
-Die Game Engine wurde in Kopenhagen in 2005 veröffentlicht und ist bekannt für Spiele wie zum Beispiel: \verb+Among Us+, \verb+Monument Valley+, \verb+Pokemon Go+ oder dem Shooter \verb+Escape from Tarkov+. Die Game Engine wurde mit C++ geschrieben, aber ermöglicht den Nutzern mit der zugänglicheren Programmiersprache C\# zu arbeiten. Außerdem bietet die Game Engine die Möglichkeit mit einem Visuellen Editor die Level zu gestalten.
+Die Game Engine wurde in Kopenhagen 2005 veröffentlicht und ist bekannt für Spiele wie zum Beispiel: \verb+Among Us+, \verb+Monument Valley+, \verb+Pokemon Go+ oder dem Shooter \verb+Escape from Tarkov+. Die Game Engine wurde mit C++ geschrieben, aber ermöglicht den Nutzern mit der zugänglicheren Programmiersprache C\# zu arbeiten. Außerdem bietet die Game Engine die Möglichkeit mit einem Visuellen Editor die Level zu gestalten.
 %todo: shooter gls?
 
 \subsection{Game Objects und Komponenten}
-Jedes Game-Object, oder auch Spiel-Objekt in Deutsch, kann eine Vielzahl von Komponenten annehmen. Die nächsten Unterkapitel beschreiben verschiedene solcher Komponenten und stellen diese bildlich dar.
+Jedes Game-Object (Spiel-Objekt in Deutsch), kann eine Vielzahl von Komponenten annehmen. Die nächsten Unterkapitel beschreiben verschiedene solcher Komponenten und stellen diese bildlich dar.
 
 \subsubsection{Das Mesh}
 \glqq A mesh consists of triangles arranged in 3D space to create the impression of a solid object. \grqq \Cite[][Anatomy of a Mesh, Unity Documentation]{unitydoc}\\
-Ein sogenanntes Mesh definiert das physikalische Objekt. Wie in dem Unity Artikel \verb+Anatomy of a Mesh+ beschrieben ist, besteht das Mesh eines Objektes aus, im 3 Dimensionalen Raum positionierten, Dreiecken die ein solides Objekt darstellen sollen.\\\\
+Ein sogenanntes Mesh definiert das physikalische Objekt. Wie in diesem Unity Artikel beschrieben ist, besteht das Mesh eines Objektes aus, im 3 Dimensionalen Raum positionierten, Dreiecken welche ein solides Objekt darstellen sollen.\\\\
 \noindent
 \includegraphics[width=1\linewidth]{chapters/14/Images/Mesh2.png}
 
@@ -30,8 +30,8 @@ Der Mesh Renderer ist dafür verantwortlich Materalien und Lichteffekte wie Refl
   \label{U03}
 \end{figure}
 
-\subsubsection{Die Physics Komponenten}
-\glqq Wenn ein Rigidbody Komponent zu einem Objekt hinzugefügt wird, dann ist die Bewegung des Objektes unter der Kontrolle von Unitys Physik Engine. Selbst ohne Hinzufügen von Code wird ein Rigidbody-Objekt durch die Schwerkraft nach unten gezogen werden und auf Kollisionen mit einfallenden Objekten reagieren, wenn auch das passende Collider-Komponente vorhanden ist.\grqq \cite[][Rigidbody, Unity Documentation]{unitydocRigidbody} \\
+\subsubsection{Die Physics Komponenten} 
+Wenn ein Rigidbody Komponent zu einem Objekt hinzugefügt wird, dann ist die Bewegung des Objektes unter der Kontrolle von Unitys Physik Engine. Selbst ohne Hinzufügen von Code wird ein Rigidbody-Objekt durch die Schwerkraft nach unten gezogen und auf Kollisionen mit einfallenden Objekten reagieren. Auch wenn das passende Collider-Komponente vorhanden ist. \cite[][Rigidbody, Unity Documentation] {unitydocRigidbody} \\ 
 
 \noindent
 
@@ -46,7 +46,7 @@ Der Mesh Renderer ist dafür verantwortlich Materalien und Lichteffekte wie Refl
 \setauthorname{Lukas Schachinger \& Martin Usta}
 
 \subsubsection{Skript Komponente}
-Zudem ist es Möglich einem Game-Objekt ein eigenes Skript als Komponente hinzuzufügen. Mit C\# Code ist es möglich eigene Fähigkeiten oder Attribute dem Objekt zu geben. Zum Beispiel kann eine Variable für \bettergls{hp}{1} angelegt werden. Wenn dieses Game-Objekt dann durch Kontakt mit einem Gegner schaden bekommt, werden Lebenspunkte abgezogen. Wenn diese dann auf Null gelangen, kann mit dem Code das Game-Objekt deaktiviert werden
+Zudem ist es möglich einem Game-Objekt ein eigenes Skript als Komponente hinzuzufügen. Mit C\# Code ist es möglich eigene Fähigkeiten oder Attribute dem Objekt zu geben. Zum Beispiel kann eine Variable für \bettergls{hp}{1} angelegt werden. Wenn dieses Game-Objekt dann durch Kontakt mit einem Gegner Health Points abgezogen bekommt, werden Lebenspunkte abgezogen. Wenn diese dann auf Null gelangen, kann mit dem Code das Game-Objekt deaktiviert werden.
 
 
 \subsection{Skybox}\
@@ -71,18 +71,18 @@ Zu beachten ist das die Würfelseiten die richtige Textur bekommen. Jede Seite h
 \pagebreak
 \subsection{Animation}
 
-Beim Animieren geht es darum, dem Nutzer eine scheinbare Bewegung des Spielobjekts zu vermitteln. Dabei werden die beweglichen Abläufe eines Spielobjekts erstellt und aufgenommen. Hierbei werden die Koordinaten bestimmter Körperelemente in Keyframes festgehalten. Diese können dann auf einer Zeitachse platziert werden. Dadurch wird ein Keyframe mit den gespeicherten Koordinaten zum entsprechenden Zeitpunkt aufgerufen, um eine Bewegung zu simulieren. Jede Münze besitzt diese Animationskomente.
+Beim Animieren geht es darum, dem Nutzer eine scheinbare Bewegung des Spielobjekts zu vermitteln. Dabei werden die beweglichen Abläufe eines Spielobjekts erstellt und aufgenommen. Hierbei werden die Koordinaten bestimmter Körperelemente in Keyframes festgehalten. Diese können dann auf einer Zeitachse platziert werden. Dadurch wird ein Keyframe mit den gespeicherten Koordinaten zum entsprechenden Zeitpunkt aufgerufen, um eine Bewegung zu simulieren. In dem Prototypen besitzt jede Münze eine Animationskomente.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{chapters/14/Images/Animation.png}
-  \caption{Eine Abbildung der drehenden Münzen.}
+  \caption{Die drehenden Münzen im ersten Level.}
   \label{U06}
 \end{figure}
 
 \subsection{Partikel des Portals}
 
-Die Partikel des Portals sind mehrere Game-Objekte die den Partikel Komponenten haben. Dieser musste nur in der Größe und Rotation angepasst werden. Dem Partikel System mussten die Einstellungen und das Material angepasst werden um diesen Effekt zu bekommen.
+Die Partikel des Portals sind mehrere Game-Objekte die den Partikel Komponenten haben. Ein Partikelsystem besteht aus einer Source und Partikeln. Dieser muss nur in der Größe und Rotation angepasst werden. Dem Partikel System müssen die Einstellungen und das Material angepasst werden um diesen Effekt zu bekommen.
 
 \begin{figure}[H]
   \centering
