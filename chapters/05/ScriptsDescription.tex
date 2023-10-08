@@ -55,12 +55,12 @@ public class Player : MonoBehaviour{
 }
 \end{lstlisting}
 
-Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem Aufruf dieser Methode wird der Schaden der derzeitigen Lebenspunkte abgezogen und der Lebensanzeige neu übergeben. Außerdem wird mit einer \bettergls{coroutine}{1} kurzzeitig das DamageOverlay angezeigt. Falls der Spieler keine Lebenspunkte mehr hat, wird der GameOverScreen angezeigt.
+Die Player Klasse enthält alle Informationen und Funktionen der Lebenspunkte des Charakters. In der \verb+Start()+ Methode wird die Anzahl von Lebenspunkten der Lebensanzeige übegeben. Weiters gibt es noch eine \verb+TakeDamage()+ Methode. Diese kann mit einer bestimmten Anzahl an Schaden aufgerufen werden. Bei dem Aufruf dieser Methode wird der Schaden den derzeitigen Lebenspunkten abgezogen und der Lebensanzeige neu übergeben. Außerdem wird mit einer \bettergls{coroutine}{1} kurzzeitig das DamageOverlay angezeigt. Falls der Spieler keine Lebenspunkte mehr hat, wird der GameOverScreen angezeigt.
 
 \pagebreak
 
 \subsection{PlayerMovement Klasse}
-Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. Der Code der dem Spieler es Ermöglicht sich zu bewegen und die Funktion für das Springen.\\
+Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. Der Code der dem Spieler ermöglicht sich zu bewegen und die Funktion für das Springen.\\
 
 % C#
 \begin{lstlisting}[language=CSharp,caption={CharacterMovement der PlayerMovement Klasse.},label=code:charactermovement]
@@ -77,7 +77,7 @@ Die \verb+PlayerMovement+ Klasse unterteilt sich in zwei wichtige Funktionen. De
     }
 \end{lstlisting}
 
-Es gibt zwei Wege wie das Bewegen der Spielfigur gehandhabt werden kann. Entweder ist die Bewegung statisch, oder sie ist dynamisch wie es in dem Listing oberhalb dargestellt ist. Die Methode nimmt die horizontale Bewegung der Maus und berechnet sich in welche Richtung sich der Charakter bewegen muss.\\
+Es gibt zwei Wege wie die Bewegung der Spielfigur gehandhabt werden kann. Entweder ist die Bewegung statisch, oder sie ist dynamisch wie es in dem Listing oberhalb dargestellt ist. Die Methode nimmt die horizontale Bewegung der Maus und berechnet sich in welche Richtung sich der Charakter bewegen muss.\\
 
 % C#
 \begin{lstlisting}[language=CSharp,caption={Jump \& DoubleJump der PlayerMovement Klasse.},label=code:player]
@@ -118,7 +118,7 @@ Bei dem Enemy Skript wurde, anstatt eines einfachen \verb+Waypointfollower+ wie 
     \end{minipage}
 \end{figure}
 
-In der linken Abbildung ist das Nav Mesh in Blau zu sehen. Dieses wird automatisch erstellt, wenn die Grundplattform ausgewählt wird und wie in der rechten Abbildung ein Agent erstellt wird. Bei dem dritten Tab kann das NavMesh \glqq baked\grqq \space werden. Die eingegebenen Zahlen bie dem Agent entscheiden die Oberflächen, über welche der NavMeshAgent sich hinfortbewegen kann. In dem fall des ersten Levels wurden diese so eingestellt, dass der Agent vor und nach dem Abgrund eine größere Fläche hat um sich zu bewegen. 
+In der linken Abbildung ist das Nav Mesh in Blau zu sehen. Dieses wird automatisch erstellt, wenn die Grundplattform ausgewählt wird und wie in der rechten Abbildung ein Agent erstellt wird. Bei dem dritten Tab kann das NavMesh \glqq baked\grqq \space werden. Die eingegebenen Zahlen bei dem Agent entscheiden die Oberflächen, über welche der NavMeshAgent sich hinfortbewegen kann. In dem Fall des ersten Levels wurden diese so eingestellt, dass der Agent vor und nach dem Abgrund eine größere Fläche hat um sich zu bewegen. 
 
 
 \pagebreak
@@ -208,7 +208,7 @@ public class WaypointFollower : MonoBehaviour
 }
 \end{lstlisting}
 
-In dem oberhalb abgebildeten Listing ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObjekt Array gespeichert. Mittels dem \bettergls{index}{1} und der \verb+direction+ Variable wird durch dieses Array durch-\bettergls{iteriert}{2}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und die sich zu bewegende Entfernung übergeben.
+In dem oberhalb abgebildeten Listing ist ein Ausschnitt der \verb+WayPointFollower+ Klasse dargestellt. Die in Unity erstellten Wegpunkte werden in das GameObjekt Array gespeichert. Mittels dem \bettergls{index}{1} und der \verb+direction+ Variable wird durch dieses Array durch-\bettergls{iteriert}{2}. Wenn der Index außerhalb des Arrays von Wegpunkten angekommen ist, dann wird die \verb+direction+ umgedreht. Für die eigentliche Bewegung der Plattform ist die Methode \verb+Vector3.MoveTowards()+ verantwortlich. In dieser wird die aktuelle Position, die Position des Ziels und eine Entfernung übergeben.
 
 
 \pagebreak

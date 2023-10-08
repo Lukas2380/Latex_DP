@@ -1,11 +1,11 @@
 \pagebreak
 \chapter{Entwicklung des Prototyps}
 
-In diesem Kapitel werden alle Schritte, die in die Kreation des Spiels hineingeflossen sind, beschrieben. Die Entwicklung des Prototypen fing mit der Idee des Themes an und durchlief mehere Phasen bis zur finalen Version des Spiels. Bei jeder dieser Phasen wurden viele Optimierungen gemacht und Fehler ausgebessert. 
+In diesem Kapitel werden alle Schritte, die in die Kreation des Spiels hineingeflossen sind, beschrieben. Die Entwicklung des Prototypen fing mit der Idee des Themes an und durchlief mehrere Phasen bis zur finalen Version des Spiels. Bei jeder dieser Phasen wurden viele Optimierungen gemacht und Fehler ausgebessert. 
 
-\section{Einführung in die Ausgangsidee des Spiels}
+\section{Die Ausgangsidee für das Spiel}
 
-Wegen des Vorwissens über Unity, welches in der 1 und 2.ten Klasse unterrichte wurde, war die Ausgangsidee für das Spiel eine einfache Wahl. Die fast einfachste und am weitesten verbreitete Kategorie von Spiel ist ein \bettergls{jumprun}{1}
+Wegen des Vorwissens über Unity, welches in dem 1 und 2.ten Semesters unterrichte wurde, war die Ausgangsidee für das Spiel eine einfache Wahl. Die fast einfachste und am weitesten verbreitete Kategorie von Spiel ist ein \bettergls{jumprun}{1}
 
 \begin{quote}
   \emph{\glqq Ein Merkmal (von Jump'n'Run Spielen) sind die Plattformen. [...] Typisch beim Jump'n'Run ist das Verlieren\grqq}~\cite[Art of Gaming; 1:42-1:57]{ArtOfGaming}
@@ -15,7 +15,7 @@ Ein Jump'n'Run würde einerseits kreative Freiheit über das Theme geben, aber a
 
 \section{Beschreibung des gewählten Themes}
 
-Da das Spiel nicht an der realen Welt entsprechen soll, kam die Überlegung eine Traumwelt zu bauen. In dieser gäbe es die Freiheit den Charakter, die Gegner und alle anderen Assets in verschiedenen Stilen zu designen. Damit wird auch für die Spieler des Prototypen klar, dass das gewählte Theme Fantasy ist. Zudem erleichtert diese Themenwahl dem Game-Designer die kreative Gestaltung.
+Da das Spiel nicht an der realen Welt entsprechen soll, kam die Überlegung eine Traumwelt zu bauen. In dieser gibt es die Freiheit den Charakter, die Gegner und alle anderen Assets in verschiedenen Stilen zu designen. Damit wird auch für die Spieler des Prototypen klar, dass das gewählte Theme Fantasy ist. Zudem erleichtert diese Themenwahl dem Game-Designer die kreative Gestaltung.
 
 \pagebreak
 
@@ -46,7 +46,7 @@ Die ersten Schritte bei dem Entwickeln eines Videospiels beginnen immer mit eine
   \end{minipage}
 \end{figure}
 
-In der Abbildung \ref{fig:PE01} sieht man die Konzeptzeichnung für das erste Level. In der Zeichnung ist eine von hohen Felsen abegrenzte Welt dargestellt. In der Mitte führt ein Pfad zu einem See. Über diesen schweben Plattformen. Über den Weg ist eine Holzbrücke auf der sich Münzen befinden. Die roten Punkte auf der anderen Seite des Wassers sind Gegner und am Ende des Pfades ist ein Portal, welches zum nächsten Level führt. In der rechten Abbildung \ref{fig:PE02} ist das erste Design des Hauptcharakters dargestellt. Die Überlegung war, eine kaputzentragende Eule mit einem Menschenkörper zu mischen. Die Zeichnung zeigt den Charakter von vorne und von der Seite. Der Text in der zweiten Abbildung ist eine Ideensammlung für die verschiedenen Attacken des Charakters. 
+In der Abbildung \ref{fig:PE01} sieht man die Konzeptzeichnung für das erste Level. In der Zeichnung ist eine von hohen Felsen abegrenzte Welt dargestellt. In der Mitte führt ein Pfad zu einem See. Über diesem schweben Plattformen. Über den Weg ist eine Holzbrücke auf der sich Münzen befinden. Die roten Punkte auf der anderen Seite des Wassers sind Gegner und am Ende des Pfades ist ein Portal, welches zum nächsten Level führt. In der rechten Abbildung \ref{fig:PE02} ist das erste Design des Hauptcharakters dargestellt. Die Überlegung war, eine kaputzentragende Eule mit einem Menschenkörper zu mischen. Die Zeichnung zeigt den Charakter von vorne und von der Seite. Der Text in der zweiten Abbildung ist eine Ideensammlung für die verschiedenen Attacken des Charakters. 
 \pagebreak
 
 \setauthorname{Lukas Schachinger \& Martin Usta}
@@ -70,7 +70,7 @@ Die zwei Hauptziele der Version 1 des Prototyen waren:
 \end{figure}
 
 Das erste Level des Prototypen wurde mit dem Unity Terrain Tool entworfen. Mit diesem Tool können Erhöhungen aus einer Platte erstellt werden. Genauso können Objekte wie Gräser und Bäume dynamisch auf den Grund des Levels plaziert und eingefärbt werden. \\\\
-Dieses Tool ist zwar sehr mächtig, jedoch hat es auch seine Schwächen. Nach dem das Grundgerüst fertig war mussten noch Assets wie Bäume, Münzen und Gegner erstellt werden. Diese wurden in Blender modelliert und nach Unity exportiert. Beim Importieren war es wichtig, zu beachten, dass Unity und Blender ein Unterschiedliches Koordinatensystem verwendet. 
+Dieses Tool ist zwar sehr mächtig, jedoch hat es auch seine Schwächen. Nach dem das Grundgerüst fertig war mussten noch Assets wie Bäume, Münzen und Gegner erstellt werden. Diese wurden in Blender modelliert und nach Unity exportiert. Beim Importieren war es wichtig, zu beachten, dass Unity und Blender ein unterschiedliches Koordinatensystem verwendet. 
 
 \pagebreak
 
@@ -89,7 +89,7 @@ Für die Programmierung der beweglichen Plattformen wurde ein leeres Unity Proje
 
 In der obigen Abbildung ist die Erstellung der beweglichen Plattformen dargestellt. Das weiße Rechteck ist die eigentliche Plattform auf der, der Charakter stehen kann. Die grüne Box außerhalb ist ein Box-\bettergls{collider}{1}. Dieser wurde für dieses Bild, für bessere Erkennbarkeit, vergrößert. Die drei blauen Punkte neben und über der Plattform sind die Wegpunkte für die Route der Plattform. Diese werden in dem \verb+WayPointFollower+ Skript angesprochen. \\
 
-Bei dem Testen mit einer Spielfigur ist ein Problem aufgetreten ist. Die Plattform ist unter dem Charakter weggeflogen. Dabei hilft aber das \verb+StickyPlatform+ Skript. In diesem wird mit einem genialen Trick dieses Problem gelöst.\\
+Bei dem Testen mit einer Spielfigur ist ein Problem aufgetreten. Die Plattform ist unter dem Charakter weggeflogen. Dabei half aber das \verb+StickyPlatform+ Skript. In diesem wird mit einem genialen Trick dieses Problem gelöst. Dieser Trick wird in der Beschreibung dieses Skriptes genau dargelegt.\\
 
 Das \verb+WayPointFollower+ Skript und auch das \verb+StickyPlatform+ Skript werden in dem \verb+Skripte+ Kapitel genauer beschrieben. 
 
@@ -103,7 +103,7 @@ Das \verb+WayPointFollower+ Skript und auch das \verb+StickyPlatform+ Skript wer
  % \item Vorbereitung für die Optimierung in Version 2 des Prototyps (V2)
 %\end{itemize}
 
-Bei der ersten Version des Prototypen gab es noch viele Probleme. In den nächsten Punkten werden diese genauer Beschrieben. Welche Auswirkungen jeder dieser Fehler auf das Spiel hat und wie dieser behoben wurde.
+Bei der ersten Version des Prototypen gab es noch viele Probleme. In den nächsten Punkten werden diese genauer beschrieben. Welche Auswirkungen jeder dieser Fehler auf das Spiel hat und wie dieser behoben wurde.
 
 \subsubsection{Unity Terrain Tools}
 Bei der ersten Version war noch der Plan das erste Level mit den Unity Terrain Tools zu machen. Jedoch hat es sich schnell herausgestellt, dass dieses Tool nicht der richtige Ansatz für den Prototyen ist. Es gab Probleme bei dem Erstellen von dem Terrain und den schon erstellten Assets. Eine einfache Lösung dafür war, das Tool nichtmehr zu verwenden. Demnach der Umstieg auf Blender. Alle weiteren Versionen des Prototypen wurden mit Blender gemacht.
@@ -112,7 +112,7 @@ Bei der ersten Version war noch der Plan das erste Level mit den Unity Terrain T
 Assets wie die Brücke oder der Hauptcharakter wurden schon vorher in Blender erstellt. Es gab Unklarheiten bei der Auswirkung von hohen Polygonanzahlen. Diese beiden Assets wurden sehr detailliert modelliert. Das hatte die Auswirkung, dass bei dem Spielen des Prototypen die Perfomance gelitten hat. Lösung des Problemes war die neue Erstellung dieser Assets mit ungefähr 10.000 Polygonen anstatt 3 Millionen.
 
 \subsubsection{Movement Skript}
-Das Movement Skript der ersten Version hat ebenfalls gröbere Fehler enthalten. Der größte Fehler war die Verwendung der Funktion für die Bewegung der Spielfigur. Das Problem war, dass wenn der Player sich diagonal bewegte, wurde Bewegungsgeschwindigkeit von den zwei Richtungen addiert. Die Lösung des Problemes war, die Bewegungsrichtung zuerst herauszufinden und dann erst die Bewegungsgeschwindigkeit zu multiplizieren.
+Das Movement Skript der Spielfiguren in der ersten Version hat ebenfalls gröbere Fehler enthalten. Der größte Fehler war die Verwendung der Funktion für die Bewegung der Spielfigur. Das Problem war, dass wenn der Player sich diagonal bewegte, wurde die Bewegungsgeschwindigkeit von den zwei Richtungen addiert. Die Lösung des Problemes war, die Bewegungsrichtung zuerst herauszufinden und dann erst die Bewegungsgeschwindigkeit zu multiplizieren.
 
 \pagebreak
 
@@ -205,13 +205,13 @@ Die Konzeptzeichnung der Gegner wurde von Katharina Usta erstellt und ist die Gr
 \subsection{Level 2}
 \begin{figure}[h]
   \centering
-  \includegraphics*[width=0.6\textwidth]{chapters/04/images/V3/Level2.png}
+  \includegraphics*[width=1\textwidth]{chapters/04/images/V3/Level2.png}
   \caption{Das Grundgerüst des zweiten Levels.}
   \label{fig:PE09}
 \end{figure}
 
 Die Überlegung für das zweite Level war es, anschließend zu dem Portal im ersten Level, ein höhlen Level zu machen. In der Abbildung \ref{fig:PE09} sieht man den Ansatz des Leveldesigns. Der Boden soll Lava darstellen und das komplette Level soll sich innerhalb einer Höhle befinden. 
-Das kann einfach erreicht werden indem ein das komplette Level in einem Quader platziert wird. Diesem müsste nur die Höhlenform ausgeschitten werden. Zum Zeitpunkt der Abgabe ist das Level noch unter \glqq Bauarbeiten\grqq \space und daher nur als Hintergrund des Endbildschirmes zu sehen. Siehe Abbildung \ref{fig:UI20}.
+Das kann einfach erreicht werden indem das komplette Level in einem Quader platziert wird. Diesem müsste nur die Höhlenform ausgeschitten werden. Zum Zeitpunkt der Abgabe ist das Level noch unter \glqq Bauarbeiten\grqq \space und daher nur als Hintergrund des Endbildschirmes zu sehen. Siehe Abbildung \ref{fig:UI20}.
 
 %In der finalen Version, wurde der Entschluss gefasst das die Map nochmal in Blender erstellt wird. Der Grund für diesen Schritt, dass in Blender die Tools ausgereifter für eine Level erstellung sind. Somit wirkt die Map schöner und perfomanter. Zudem gibt es schon Ansätze für das zweite Level. Aufgrund von zeitlichen Gründen haben wir es nicht geschafft das zweite Level fertig zustellen. In der letzten version wurde eine Animation für die Münzen erstellt. Die Münzen rotieren um ihre eigenen Achse herum sobald das Spiel startet. Das hat den zweck das Spiel lebhafter zu wirken. Zu dem wurde die Funtkion erstellt, das Münzen eingesammelt werden können. Die eingesammelten Münzen werden dann auf den oberen linken Eck des Bildschirms angezeigt. Weitere wurde das Letzte version des Spielbaren Charakters implmentiert. Aufgrund von zeitlichen gründen hat dieser keine Animation bekommen.  
 
