@@ -9,9 +9,6 @@
 % C#
 \usepackage{listings}
 
-\counterwithout{figure}{chapter}
-\lstset{numberbychapter=false}
-
 % Fußnotenpackage
 \usepackage{fancyhdr}
 \usepackage{lastpage}
@@ -28,12 +25,12 @@
 % ende
 \input{includes/commands.tex}
 
-\usepackage[sort=standard]{glossaries}
+\usepackage[sort=use]{glossaries}
 \makenoidxglossaries
 \input{includes/glossaryEntries.tex}
 %\glsaddallunused % if glossar is acting up
 
-\usepackage[natbib=true, style=numeric,sorting=none]{biblatex}
+\usepackage[ natbib=true, style=numeric,sorting=none]{biblatex}
 \addbibresource{media/literatur.bib}
 
 % Initialen der Autoren
