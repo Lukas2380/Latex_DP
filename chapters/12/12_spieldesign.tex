@@ -13,15 +13,15 @@ Das Spieldesign umfasst mehrere Gebiete der Spielentwicklung. Die verschiedenen 
     \item Musik
 \end{itemize}
 
-Bei diesen Gebieten der Spielentwicklung ist es wichtig, dass sie das selbe Theme verfolgen und zueinander passen. Falls die Gebiete mit dem Spielsdesign nicht zueinander passen, so wird das Spielrlebnis für den Endkonsumenten schlechter. 
+Bei diesen Gebieten der Spielentwicklung ist es wichtig, dass das Theme zueinander passt. Falls die Gebiete mit dem Spielsdesign nicht zueinander passen, so wird das Spielerlebnis für den Endkonsumenten schlechter. 
 
 \subsection{Leveldesign - Umgebungsdesign}
 Das Leveldesign besteht aus zwei voneinander abhängigen Gebieten. 
 Das betrifft das jeweilige Level und die dazugehörige Umgebung. Dabei geht es beim Leveldesign um: Spielfiguren, Plattformen, Levelaufbau, Levelphysik etc. 
 Das Umgebungsdesign befasst sich mit der Umgebung des Spiels wie zum Beispiel: Himmel(Skybox), Berge, Flüssigkeiten, Sonneneinstrahlung, etc. 
-Beide Aspekte entscheiden wie realistisch das Spiel auf den Spieler wirkt. Es ist nicht empfehlenswert den Grafikstyle zwischen den Properties und der Umgebung zu mischen.
+Beide Aspekte entscheiden wie realistisch das Spiel auf den Spieler wirkt. Der Grafikstyle sollte nicht zwischen den Properties und der Umgebung gemischt sein.
 
-Ein Level besteht immer aus statischen Objekte und dynamischen Objekte. 
+Ein Level besteht immer aus statischen Objekten und dynamischen Objekten. 
 %todo: maybe insert citation?
 
 \pagebreak
@@ -37,7 +37,7 @@ Ein weiteres Beispiel wären die im Spiel implementierten Häuser. Diese fungier
 Dynamische Objekte haben im Gegensatz zu statischen Objekten einen Code im Hintergrund. Diese Objekte haben einen aktiven Einfluss auf das Spielgeschehen. Zudem können sie mit dem spielbaren Charakter interagieren. Hier muss aber wieder differenziert werden zwischen einem Umgebungsobjekt und einem \bettergls{npc}{2}.\\\\
 Ein Umgebungsobjekt wäre zum Beispiel eine Plattform die sich bewegt. Diese hat einen aktiven Einfluss auf den Spieler. Meistens werden dynamische Umgebungsobjekte als Herausforderung dem Spieler entgegengestellt. Ein Beispiel wäre eine Falle, die den Spieler blockiert bis dieser einen versteckten Schalter findet. 
 \\\\
-Ein NPC zählt zwar auch als dynamische Objekt aber hat einen anderen Nutzen als das Umgebungsobjekt. Ein NPC muss nicht ein Gegner sein, er kann auch ein hilfsbereiter Dorfbewohner sein. Eine weitere Rolle wäre die eines Questgebers. dieser könnte dem Spieler dieverse Aufgaben geben, welche dieser erfüllen muss, um weiter im Spiel voranzuschreiten. Eine andere Funktion ist, dass der Spieler von einem NPC blockiert werden kann oder sogar den Spieler angreift um ihn aufzuhalten.
+Ein NPC zählt zwar auch als dynamisches Objekt aber hat einen anderen Nutzen als das Umgebungsobjekt. Ein NPC muss nicht ein Gegner sein, er kann auch ein hilfsbereiter Dorfbewohner sein. Eine weitere Rolle wäre die eines Questgebers. Dieser könnte dem Spieler diverse Aufgaben geben, welche dieser erfüllen muss, um weiter im Spiel voranzuschreiten. Eine andere Funktion ist, dass der Spieler von einem NPC blockiert werden kann oder sogar den Spieler angreift um ihn aufzuhalten.
 
 \pagebreak
 
@@ -49,32 +49,32 @@ In einem Spiel gibt es immer eine Spielewelt in der die Geschichte erzählt wird
 Ein sektionales Level besteht aus mehreren Level und Szenen. Der große Vorteil ist, dass Assets in einem anderen Level wiederverwertet werden können. weiteres ist, dass die Level unabhängig voneinander sind. Somit können größere Storysprünge gemacht werden. Der Nachteil dabei ist, dass der Storyfluss  gestört wird falls die Sprünge zwischen den Level zu groß sind. 
 
 \subsubsection{Spielobjekte in sektionalen Leveln}
-In einem sektionalen Level sind die Spielobjekte nicht an die anderen Level gebunden. Somit können die Assets je nach Level komplett unterschiedlich sein. Nehmen wir als Beispiel das Spiel \verb+Super Mario 64+. Hierbei ist ein Level sommerlich gestaltet und das nächste im Winterdesign. Zudem können dann im weiteren Spielverlauf Spielobjekte wiederverwendet werden. Die wiederverwendet Objekte werden nur wenig verändert, damit diese zum Leveltheme passen. Was auch Interessannt ist, die Tatsache auch Gegenerische Spielfiguren nur leicht verändert werden um deren Stärke zu Demostrieren. Zum Beispiel der Videospiel Klassiker \verb+Chicken Invaders+. Bei diesem Spiel haben die Gegnerischen Spielfiguren das gleiche Aussehen, aber die Farbe der getragenen T-Shirts verändert sich. Zum Beispiel hält ein Huhn mit einen roten T-Shirt weniger aus als Eines mit einem blauen usw. Hier bei wird eindeutig nur die Farbe geändert und somit viel Zeit erspart für das Designen neuer Gegner.
+In einem sektionalen Level sind die Spielobjekte nicht an die anderen Level gebunden. Somit können die Assets je nach Level komplett unterschiedlich sein. Nehmen wir als Beispiel das Spiel \verb+Super Mario 64+. Hierbei ist ein Level sommerlich gestaltet und das nächste im Winterdesign. Zudem können dann im weiteren Spielverlauf Spielobjekte wiederverwendet werden. Die wiederverwendeten Objekte werden nur wenig verändert, damit diese zum Leveltheme passen.Die gegenerische Spielfiguren werden nur leicht verändert, um deren Stärke zu demostrieren. Zum Beispiel der Videospiel Klassiker \verb+Chicken Invaders+. Bei diesem Spiel haben die gegnerischen Spielfiguren das gleiche Aussehen, aber die Farbe der getragenen T-Shirts verändert sich. Zum Beispiel hält ein Huhn mit einen roten T-Shirt weniger aus als eines mit einem blauen usw. Hier bei wird eindeutig nur die Farbe geändert und somit viel Zeit erspart für das Designen neuer Gegner.
 
 \section{Openworld}
-Die Openworld ist eine Spielewelt, die keinen Level wechsel besitzt. Somit spielt die gesamte Geschichte in einem Level. Das Level bei einer Openworld ist um das Vielfache größer als eine sektionales Level. Im Gegensatz zum sektionale Spieldesign besteht die Openworld aus zusammengesetzten Level.
+Die Openworld ist eine Spielewelt, die keinen Level wechsel besitzt. Somit spielt die gesamte Geschichte in einem Level. Das Level bei einer Openworld ist um das Vielfache größer als ein sektionales Level. Im Gegensatz zum sektionale Spieldesign besteht die Openworld aus zusammengesetzten Level.
 
 
 \subsection{Spielobjekte in einer Openworld}
-In einer Openworld sind die die Spieleobjekte vom design Aspekt abhängig. Die Objekte einer Openworld sollten die ganze Zeit zusammenpassen, sonst wirkt es deplaziert und das Spielerlebnis wird gestört. Beim Betrachten der Openworld von \verb+GTA 5+, die im Jahr 2013 erschien, fällt auf, dass sie sehr durchdacht gestaltet wurde. In der Stadt sind Wolkenkratzer, Autobahnen, Geschäfte usw. Im Gegensatz wenn man in den Wald geht, da sind Tiere, Holzfällerhütten und Bäume. Wichtig ist, dass der Übergang zwischen den unterschiedlichen Gebieten schön übergehen. 
+In einer Openworld sind die Spieleobjekte vom design Aspekt abhängig. Die Objekte einer Openworld sollten die ganze Zeit zusammenpassen, sonst wirkt es deplaziert und das Spielerlebnis wird gestört. Beim Betrachten der Openworld von \verb+GTA 5+, die im Jahr 2013 erschien, fällt auf, dass sie sehr durchdacht gestaltet wurde. In der Stadt sind Wolkenkratzer, Autobahnen, Geschäfte usw. Im Gegensatz wenn man in den Wald geht, da sind Tiere, Holzfällerhütten und Bäume. Wichtig ist, dass der Übergang zwischen den unterschiedlichen Gebieten schön übergreifen. 
 
 
 \subsection{Kamera und Sichten}
-In einer Spielewelt gibt es immer eine Kamera, die das Spielgeschehen den User  anzeigt. Diese kann sowohl statisch auf eine Szene im Spiel plaziert sein, oder auch auf die Spielfigur selbst. Zum Beispiel wäre es bei einem Schachspiel essentiell das sich die Kamera nicht bewegt und die Linse auf das Spielbrett zeigt. In diesem Fall wäre die Sicht die Adlerperspektive, oder auch Dropdown genannt. Hier zeigt die Kamera von Oben nach Unten. Dann gibt es noch unterschiede zwischen den Sichten wie die Ansicht der Kamera auf das Spielerlebnis. Da wären folgende:
+In einer Spielewelt gibt es immer eine Kamera, die das Spielgeschehen den User  zeigt. Die virtuelle Kamera kann sowohl statisch auf eine Szene im Spiel gerichtet sein, oder auch auf die Spielfigur selbst. Zum Beispiel wäre es bei einem Schachspiel essentiell das sich die Kamera nicht bewegt und die Linse auf das Spielbrett zeigt. In diesem Fall wäre die Sicht die Adlerperspektive, oder auch Dropdown genannt. Hier zeigt die Kamera von Oben nach Unten. Dann gibt es noch unterschiede zwischen den Sichten wie die Ansicht der Kamera auf das Spielerlebnis. Da wären folgende:
 
 \begin{itemize}
-    \item \textbf{First Person:}
-    \noindent Die firtsperson Sicht zeigt die Sicht aus der Spielfigur
-    \item \textbf{Third Person:}
-    \noindent Die thirdperson Sicht zeigt sowohl die Spielfigur als auch alles runterum. 
+    \item \textbf{First-Person:}
+    \noindent Die First-Person zeigt die Sicht aus der Spielfigur
+    \item \textbf{Third-Person:}
+    \noindent Die Third-Person zeigt sowohl die Spielfigur als auch alles runterum. 
 \end{itemize}
 
 \subsection{Theme Auswahl}
-Das Theme bestimmt welche Atmosphäre das Spiel haben soll. Bei dem Theme ist es wichtig das es mit dem Gameplay abgestimmt ist. Es gibt viele Arten von Themes von Horror bis zu Abenteuer ist alles dabei. Nach der Theme Auswahl kann die Planung für die Game Assets beginnen. Zudem entscheidet das Theme weitere Spieldesign Aspekte: wie die Musik, die Spielmechaniken und die  Story.Die Entscheidung fiel auf ein fantasie Theme. Das heißt, dass die Grafik sehr bunt gestaltet ist und einen nicht realistischen Grafikstil besitzt. Bei einen Fantasie Theme ist die Auswahl der Gestaltung des Levels sehr umfangreich. 
+Das Theme bestimmt welche Atmosphäre das Spiel haben soll. Bei dem Theme ist es wichtig das es mit dem Gameplay abgestimmt ist. Es gibt viele Arten von Themes von Horror bis zu Abenteuer. Nach der Theme Auswahl kann die Planung für die Game Assets beginnen. Zudem entscheidet das Theme weitere Spieldesign Aspekte: wie die Musik, die Spielmechaniken und die  Story.Die Entscheidung fiel auf ein fantasie Theme. Das heißt, dass die Grafik sehr bunt gestaltet ist und einen nicht realistischen Grafikstil besitzt. Bei einen Fantasie Theme ist die Auswahl der Gestaltung des Levels sehr umfangreich. 
 
 
 \subsection{Spiel Schwierigkeit}
 
-Bei der Spieleentwicklung ist es wichtig die Schwierigkeit des Spieles richtig zu setzen. Schwierigkeit bestimmt den Flow des Spielverlaufs. Die Schwierigkeit sollte je nach Zielgruppe abgestimmt werden. Für die Spieler ist es wichtig, dass das man gefordert wird. Das gibt dem User das Gefühl etwas erreicht zu haben. Zudem sollte das Spiel nicht zu schwer sein, damit der Spieler nicht von dem Spiel frustriert wird.
+Bei der Spieleentwicklung ist es wichtig die Schwierigkeit des Spieles richtig zu setzen. Schwierigkeit bestimmt den Flow des Spielverlaufs. Die Schwierigkeit sollte je nach Zielgruppe abgestimmt werden. Für die Spieler ist es wichtig, dass das man gefordert wird. Das gibt dem User das Gefühl etwas erreicht zu haben. Zudem sollte das Spiel nicht zu schwer sein, damit der Spieler nicht das Interesse verliert.
 
 %https://www.nuclino.com/articles/level-design#:~:text=What%20is%20level%20design%3F,player%20and%20keep%20them%20engaged.

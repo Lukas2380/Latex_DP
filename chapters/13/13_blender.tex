@@ -3,7 +3,7 @@
 \chapter{Blender}
 
 \subsection{Einführung}
-Blender ist ein umfangreiches Programm für die Erstellung von 3D-Objekten. Diese Software kann man auch zum Animieren, Zeichnen, Video Editen oder Ähnlichem benutzen. 
+Blender ist ein umfangreiches Programm für die Erstellung von 3D-Objekten. Diese Software kann man auch zum Animieren, Zeichnen, Video Editieren oder Ähnlichem benutzen. 
 In dieser Diplomarbeit wird der Fokus auf den 3D-Viewport und auf die Animation gesetzt. Das sind die wichtigsten Funktionen für die weiter Bearbeitung in Unity. 
 
 \subsection{3D-Viewport}
@@ -35,7 +35,7 @@ Es können zudem weitere Objekte hinzugefügt werden.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/3D-Viewport.png}
-    \caption{In dieser Abbildung sind man den Objekt Mode von Blender.}
+    \caption{Ein selectierter Würfel im Objekt Mode von Blender.}
     \label{UST-8}
 \end{figure}
 
@@ -51,7 +51,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/ExtrudeTool.png}
-        \caption{In dieser Abbildung sind man wie eine Fläche extrudiert wurde.}
+        \caption{Eine Extration von einer Würfelfläche.}
         \label{UST-9}
     \end{figure}
     
@@ -60,7 +60,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/InsetFace.png}
-        \caption{In dieser Abbildung sind man eine Fläche in einer anderen Fläche erstellt.}
+        \caption{Die Funktion Inset Faces erstellt eine neue Fläche auf einer ausgewählten Fläche.}
         \label{UST-10}
     \end{figure}
     
@@ -69,7 +69,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/Loopcut.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Loopcut Tools.}
+        \caption{Die Anwendung des Loopcut Tools wird auf einen Würfel verwendet.}
         \label{UST-11}
     \end{figure}
     \item \textbf{Messer}:
@@ -77,7 +77,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/KniveTool.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Knive Tools.}
+        \caption{Die Anwendung des Knive Tools wird auf einen Würfel verwendet.}
         \label{UST-12}
     \end{figure}
     \item \textbf{Poly Builder}: 
@@ -85,7 +85,7 @@ Diese Tools sind:
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{chapters/13/images/PolyBuild.png}
-        \caption{In dieser Abbildung sieht man die Anwendung des Poly Build Tools.}
+        \caption{Die Anwendung des Poly Build Tools wird auf einen Würfel verwendet.}
         \label{UST-13}
     \end{figure}
 \end{itemize}
@@ -97,21 +97,21 @@ Zuerst werden grobe Details des Objekt erzeugt wie zum Beispiel die Grundform de
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung der Grundform eines Spielobjekts.}
+    \caption{Die Bearbeitung der Grundform eines Spielobjekts®.}
     \label{UST-14}
 \end{figure}
 \noindent Danach wird die Anzahl der Polygone erhöht um feinere Details hinzuzufügen. Dieser Workflow dient dazu so immer auf einer Detailstufe zu bleiben.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett1.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung gröberer Details mit einer höheren Polygonanzahl.}
+    \caption{Die Bearbeitung gröberer Details mit einer höheren Polygonanzahl.}
     \label{UST-15}
 \end{figure}
 \noindent Dieser Ablauf wird 2 bis 3 mal wiederholt um ein schönes detailiertes Objekt zu erstellen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett2.png}
-    \caption{In dieser Abbildung zeigt die Bearbeitung feinere Details auf das Objekt.}
+    \caption{Die Bearbeitung feinere Details auf das Objekt.}
     \label{UST-16}
 \end{figure}
 \noindent Wichtig ist darauf zu achten, dass je mehr Polygone das Objekt besitzt desto mehr muss die Cpu rechnen. Das kann zum weiteren, zur schlechteren Performance im Spiel verusachen. Der letzte Schritt ist dann wieder das Runterskalieren der Objekte. Dieser Schritt ist wichtig um unnötige Polygone nicht zu laden. Wichtig dabei ist, dass die Details bebehalten werden.Um das zu gewährleisten, werden Bereiche des Obejekt runter skaliert. In der Folgenden Abbildung kann man erkennen, dass die orange Fläche keine Details enthält und somit runterskaliert wurde.
@@ -119,6 +119,6 @@ Zuerst werden grobe Details des Objekt erzeugt wie zum Beispiel die Grundform de
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/13/images/HolzBrett3.png}
-    \caption{Diese Abbildung zeigt die runterskalierung einer Fläche auf dem Objekt.}
+    \caption{Die runterskalierung einer bestimmten Fläche auf dem Objekt.}
     \label{UST-17}
 \end{figure}

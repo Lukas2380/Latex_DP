@@ -6,11 +6,11 @@
 
 
 \subsection{Einführung}
-In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spieleentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert. Bei der Spieleentwicklung kann man die Performance anhand von zwei Faktoren optimieren. Ein Faktor betrifft dabei die Spiel Engine, während der andere Faktor das Modellierungsprogramm betrifft. 
+In jedem Spiel ist es wichtig, dass das Spiel ohne Performanceverluste funktioniert. Die Performance wird von der Spielewelt und ihren Spielobjekten beeinträchtigt. Bei der Spieleentwicklung muss sehr oft abgewogen werden ob bestimmte Details ins Spiel implementiert sein müssen. Denn Jedes noch so kleine Detail braucht Rechenleistung. In der Spieleentwicklung werden nur selten Spielobjekte wegen des Leistungsverlustes entfernt. Meistens werden diese für das Spiel optimiert. Bei der Spieleentwicklung kann man die Performance anhand von zwei Faktoren optimieren. Ein Faktor betrifft dabei die Spiel Engine, während der andere Faktor das Modellierungsprogramm betrifft. 
 
 \subsection{Spielobjekt Optimierung im Grafikprogramm}
-Bei den Grafikprogrammen kann vieles gemacht werden um das Spielobjekt performance effizienter zu machen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygonanzahl bestimmt den Detailgrad des Spielobjekts, das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein, dass die Performance im Spiel darunter leidet. Denn sobald sich ein Polygon in der Darstellungsdistanz befindet, wird es berechnet. Um die Anzahl der Polygone niedrig zu halten, werden die Details als \glqq Objekt-Images \grqq \space gezeichnet. \\\\ 
-Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten wir die meisten Objekte in unseren Prototypen neu bearbeiten. Dieser Vorgang wird auch als 'Mapping' bezeichnet.
+Bei den Grafikprogrammen kann vieles gemacht werden um die Spielobjekt performance effizienter zu machen. Wenn ein Gameobjekt erstellt wird, besteht dieses aus Seiten und Flächen. Diese werden auch Polygone genannt. Die Polygonanzahl bestimmt den Detailgrad des Spielobjekts das heißt je mehr Polygone das Objekt besitzt desto detailreicher ist es. Wenn ein Objekt viele Polygone besitzt, kann es sein, dass die Performance im Spiel darunter leidet. Der Grund dafür ist,dass sobald sich ein Polygon in der Darstellungsdistanz befindet, wird es berechnet. Um die Anzahl der Polygone niedrig zu halten, werden die Details als \glqq Objekt-Images \grqq \space gezeichnet. \\\\ 
+Bei dem ersten Prototypen entstand das Problem, dass mehrere Spielobjekte zu viele Polygone hatten. Somit mussten die meisten Objekte im Prototypen neu bearbeiten. Dieser Vorgang wird auch als 'Mapping' bezeichnet.
 \pagebreak
 \subsection{Objekt Mapping}
 
@@ -21,16 +21,16 @@ In der nächsten Abbildung wird auf der linken Seite eine \verb+unwrapped+ Map v
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/11/Images/StoneAndUnwrap.png}
-    \caption{Eine Abbildung einer unwrapped map und des Objektes.}
+    \caption{Eine unwrapped map und das dazugehörige Objekt.}
     \label{htl01}
 \end{figure}
 
-\noindent Nun könnte man ein Bild unter das entfaltete Mapping legen und damit weiterarbeiten. Auf diesem Bild können nun sämtliche Details eingezeichnet werden. Sobald die Details eingezeichnet wurden, wird das Bild \glqq gebacken \grqq. Im folgenden Bild sieht man das Objektbild eines Steins: 
+\noindent Nun könnte man ein Bild unter das entfaltete Mapping legen und damit weiterarbeiten. Auf diesem Bild können nun sämtliche Details eingezeichnet werden. Sobald die Details eingezeichnet wurden, wird das Bild \glqq gebacken \grqq.Das Backen ist der Vorgang wo die berechneten Daten zu einem Bild konventiert werden. Im folgenden Bild sieht man das Objektbild eines Steins: 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{chapters/11/Images/SteinColor.png}
-    \caption{Eine Abbildung einer Colormap des Objektes.}
+    \caption{Eine Colormap von dem Objekt.}
     \label{htl01}
 \end{figure}
 
@@ -41,7 +41,7 @@ Normal-Maps sind Images, die die Eigenschaft besitzen Höhen und Tiefen eines Ob
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{chapters/11/Images/SteinNormal.png}
-    \caption{Eine Abbildung einer Normalmap des Objektes.}
+    \caption{Eine Normalmap von dem Objekt.}
     \label{htl90}
 \end{figure}
 
@@ -55,7 +55,7 @@ Das Endresultat zeigt den Stein mit einer geringe Polygonanzahl aber mit einer g
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{chapters/11/Images/SteinCombi.png}
-    \caption{Eine Abbildung des fertigen Objektes.}
+    \caption{Das fertige Objekt.}
     \label{htl01}
 \end{figure}
 
